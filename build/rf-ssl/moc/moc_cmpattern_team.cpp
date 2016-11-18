@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'cmpattern_team.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'cmpattern_team.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,27 +20,28 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CMPattern__Team_t {
     QByteArrayData data[8];
-    char stringdata[112];
+    char stringdata[111];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_CMPattern__Team_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_CMPattern__Team_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_CMPattern__Team_t qt_meta_stringdata_CMPattern__Team = {
     {
-QT_MOC_LITERAL(0, 0, 15),
-QT_MOC_LITERAL(1, 16, 21),
-QT_MOC_LITERAL(2, 38, 0),
-QT_MOC_LITERAL(3, 39, 19),
-QT_MOC_LITERAL(4, 59, 8),
-QT_MOC_LITERAL(5, 68, 4),
-QT_MOC_LITERAL(6, 73, 19),
-QT_MOC_LITERAL(7, 93, 17)
+QT_MOC_LITERAL(0, 0, 15), // "CMPattern::Team"
+QT_MOC_LITERAL(1, 16, 21), // "signalTeamNameChanged"
+QT_MOC_LITERAL(2, 38, 0), // ""
+QT_MOC_LITERAL(3, 39, 19), // "signalChangeOccured"
+QT_MOC_LITERAL(4, 59, 8), // "VarType*"
+QT_MOC_LITERAL(5, 68, 4), // "item"
+QT_MOC_LITERAL(6, 73, 19), // "slotTeamNameChanged"
+QT_MOC_LITERAL(7, 93, 17) // "slotChangeOccured"
+
     },
     "CMPattern::Team\0signalTeamNameChanged\0"
     "\0signalChangeOccured\0VarType*\0item\0"
-    "slotTeamNameChanged\0slotChangeOccured\0"
+    "slotTeamNameChanged\0slotChangeOccured"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,12 +59,12 @@ static const uint qt_meta_data_CMPattern__Team[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x06,
-       3,    1,   35,    2, 0x06,
+       1,    0,   34,    2, 0x06 /* Public */,
+       3,    1,   35,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   38,    2, 0x09,
-       7,    1,   39,    2, 0x09,
+       6,    0,   38,    2, 0x09 /* Protected */,
+       7,    1,   39,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void,
@@ -125,7 +126,7 @@ void CMPattern::Team::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 
 const QMetaObject CMPattern::Team::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_CMPattern__Team.data,
-      qt_meta_data_CMPattern__Team,  qt_static_metacall, 0, 0}
+      qt_meta_data_CMPattern__Team,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -136,7 +137,7 @@ const QMetaObject *CMPattern::Team::metaObject() const
 
 void *CMPattern::Team::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_CMPattern__Team.stringdata))
         return static_cast<void*>(const_cast< Team*>(this));
     return QObject::qt_metacast(_clname);
@@ -162,13 +163,13 @@ int CMPattern::Team::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void CMPattern::Team::signalTeamNameChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 
 // SIGNAL 1
 void CMPattern::Team::signalChangeOccured(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_END_MOC_NAMESPACE

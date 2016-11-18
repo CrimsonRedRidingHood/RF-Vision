@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarItemDelegate.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarItemDelegate.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,21 +20,22 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarItemDelegate_t {
     QByteArrayData data[3];
-    char stringdata[46];
+    char stringdata[45];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarItemDelegate_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarItemDelegate_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarItemDelegate_t qt_meta_stringdata_VarTypes__VarItemDelegate = {
     {
-QT_MOC_LITERAL(0, 0, 25),
-QT_MOC_LITERAL(1, 26, 17),
-QT_MOC_LITERAL(2, 44, 0)
+QT_MOC_LITERAL(0, 0, 25), // "VarTypes::VarItemDelegate"
+QT_MOC_LITERAL(1, 26, 17), // "editorChangeEvent"
+QT_MOC_LITERAL(2, 44, 0) // ""
+
     },
     "VarTypes::VarItemDelegate\0editorChangeEvent\0"
-    "\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +53,7 @@ static const uint qt_meta_data_VarTypes__VarItemDelegate[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a,
+       1,    0,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -74,7 +75,7 @@ void VarTypes::VarItemDelegate::qt_static_metacall(QObject *_o, QMetaObject::Cal
 
 const QMetaObject VarTypes::VarItemDelegate::staticMetaObject = {
     { &QItemDelegate::staticMetaObject, qt_meta_stringdata_VarTypes__VarItemDelegate.data,
-      qt_meta_data_VarTypes__VarItemDelegate,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarItemDelegate,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -85,7 +86,7 @@ const QMetaObject *VarTypes::VarItemDelegate::metaObject() const
 
 void *VarTypes::VarItemDelegate::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarItemDelegate.stringdata))
         return static_cast<void*>(const_cast< VarItemDelegate*>(this));
     return QItemDelegate::qt_metacast(_clname);

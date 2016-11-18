@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'field.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'field.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,23 +20,24 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_RoboCupField_t {
     QByteArrayData data[5];
-    char stringdata[57];
+    char stringdata[56];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_RoboCupField_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_RoboCupField_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_RoboCupField_t qt_meta_stringdata_RoboCupField = {
     {
-QT_MOC_LITERAL(0, 0, 12),
-QT_MOC_LITERAL(1, 13, 18),
-QT_MOC_LITERAL(2, 32, 0),
-QT_MOC_LITERAL(3, 33, 7),
-QT_MOC_LITERAL(4, 41, 14)
+QT_MOC_LITERAL(0, 0, 12), // "RoboCupField"
+QT_MOC_LITERAL(1, 13, 18), // "calibrationChanged"
+QT_MOC_LITERAL(2, 32, 0), // ""
+QT_MOC_LITERAL(3, 33, 7), // "changed"
+QT_MOC_LITERAL(4, 41, 14) // "restoreRoboCup"
+
     },
     "RoboCupField\0calibrationChanged\0\0"
-    "changed\0restoreRoboCup\0"
+    "changed\0restoreRoboCup"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,11 +55,11 @@ static const uint qt_meta_data_RoboCupField[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06,
+       1,    0,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   30,    2, 0x09,
-       4,    0,   31,    2, 0x09,
+       3,    0,   30,    2, 0x09 /* Protected */,
+       4,    0,   31,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void,
@@ -95,7 +96,7 @@ void RoboCupField::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
 
 const QMetaObject RoboCupField::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_RoboCupField.data,
-      qt_meta_data_RoboCupField,  qt_static_metacall, 0, 0}
+      qt_meta_data_RoboCupField,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -106,7 +107,7 @@ const QMetaObject *RoboCupField::metaObject() const
 
 void *RoboCupField::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_RoboCupField.stringdata))
         return static_cast<void*>(const_cast< RoboCupField*>(this));
     return QObject::qt_metacast(_clname);
@@ -132,26 +133,27 @@ int RoboCupField::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void RoboCupField::calibrationChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 struct qt_meta_stringdata_RoboCupCalibrationHalfField_t {
     QByteArrayData data[4];
-    char stringdata[73];
+    char stringdata[72];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_RoboCupCalibrationHalfField_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_RoboCupCalibrationHalfField_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_RoboCupCalibrationHalfField_t qt_meta_stringdata_RoboCupCalibrationHalfField = {
     {
-QT_MOC_LITERAL(0, 0, 27),
-QT_MOC_LITERAL(1, 28, 24),
-QT_MOC_LITERAL(2, 53, 0),
-QT_MOC_LITERAL(3, 54, 17)
+QT_MOC_LITERAL(0, 0, 27), // "RoboCupCalibrationHalfField"
+QT_MOC_LITERAL(1, 28, 24), // "globalCalibrationChanged"
+QT_MOC_LITERAL(2, 53, 0), // ""
+QT_MOC_LITERAL(3, 54, 17) // "autoUpdateChanged"
+
     },
     "RoboCupCalibrationHalfField\0"
-    "globalCalibrationChanged\0\0autoUpdateChanged\0"
+    "globalCalibrationChanged\0\0autoUpdateChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -169,8 +171,8 @@ static const uint qt_meta_data_RoboCupCalibrationHalfField[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x09,
-       3,    0,   25,    2, 0x09,
+       1,    0,   24,    2, 0x09 /* Protected */,
+       3,    0,   25,    2, 0x09 /* Protected */,
 
  // slots: parameters
     QMetaType::Void,
@@ -194,7 +196,7 @@ void RoboCupCalibrationHalfField::qt_static_metacall(QObject *_o, QMetaObject::C
 
 const QMetaObject RoboCupCalibrationHalfField::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_RoboCupCalibrationHalfField.data,
-      qt_meta_data_RoboCupCalibrationHalfField,  qt_static_metacall, 0, 0}
+      qt_meta_data_RoboCupCalibrationHalfField,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -205,7 +207,7 @@ const QMetaObject *RoboCupCalibrationHalfField::metaObject() const
 
 void *RoboCupCalibrationHalfField::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_RoboCupCalibrationHalfField.stringdata))
         return static_cast<void*>(const_cast< RoboCupCalibrationHalfField*>(this));
     return QObject::qt_metacast(_clname);

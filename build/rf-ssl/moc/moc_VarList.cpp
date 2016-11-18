@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarList.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarList.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,24 +20,25 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarList_t {
     QByteArrayData data[6];
-    char stringdata[59];
+    char stringdata[58];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarList_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarList_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarList_t qt_meta_stringdata_VarTypes__VarList = {
     {
-QT_MOC_LITERAL(0, 0, 17),
-QT_MOC_LITERAL(1, 18, 10),
-QT_MOC_LITERAL(2, 29, 0),
-QT_MOC_LITERAL(3, 30, 8),
-QT_MOC_LITERAL(4, 39, 5),
-QT_MOC_LITERAL(5, 45, 12)
+QT_MOC_LITERAL(0, 0, 17), // "VarTypes::VarList"
+QT_MOC_LITERAL(1, 18, 10), // "childAdded"
+QT_MOC_LITERAL(2, 29, 0), // ""
+QT_MOC_LITERAL(3, 30, 8), // "VarType*"
+QT_MOC_LITERAL(4, 39, 5), // "child"
+QT_MOC_LITERAL(5, 45, 12) // "childRemoved"
+
     },
     "VarTypes::VarList\0childAdded\0\0VarType*\0"
-    "child\0childRemoved\0"
+    "child\0childRemoved"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,8 +56,8 @@ static const uint qt_meta_data_VarTypes__VarList[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x06,
-       5,    1,   27,    2, 0x06,
+       1,    1,   24,    2, 0x06 /* Public */,
+       5,    1,   27,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -112,7 +113,7 @@ void VarTypes::VarList::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
 
 const QMetaObject VarTypes::VarList::staticMetaObject = {
     { &VarType::staticMetaObject, qt_meta_stringdata_VarTypes__VarList.data,
-      qt_meta_data_VarTypes__VarList,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarList,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -123,7 +124,7 @@ const QMetaObject *VarTypes::VarList::metaObject() const
 
 void *VarTypes::VarList::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarList.stringdata))
         return static_cast<void*>(const_cast< VarList*>(this));
     return VarType::qt_metacast(_clname);
@@ -149,14 +150,14 @@ int VarTypes::VarList::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void VarTypes::VarList::childAdded(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
 void VarTypes::VarList::childRemoved(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_END_MOC_NAMESPACE

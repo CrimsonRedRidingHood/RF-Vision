@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'plugin_dvr.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'plugin_dvr.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,18 +20,19 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_PluginDVRWidget_t {
     QByteArrayData data[1];
-    char stringdata[17];
+    char stringdata[16];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_PluginDVRWidget_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_PluginDVRWidget_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_PluginDVRWidget_t qt_meta_stringdata_PluginDVRWidget = {
     {
-QT_MOC_LITERAL(0, 0, 15)
+QT_MOC_LITERAL(0, 0, 15) // "PluginDVRWidget"
+
     },
-    "PluginDVRWidget\0"
+    "PluginDVRWidget"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +62,7 @@ void PluginDVRWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 
 const QMetaObject PluginDVRWidget::staticMetaObject = {
     { &QWidget::staticMetaObject, qt_meta_stringdata_PluginDVRWidget.data,
-      qt_meta_data_PluginDVRWidget,  qt_static_metacall, 0, 0}
+      qt_meta_data_PluginDVRWidget,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -72,7 +73,7 @@ const QMetaObject *PluginDVRWidget::metaObject() const
 
 void *PluginDVRWidget::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_PluginDVRWidget.stringdata))
         return static_cast<void*>(const_cast< PluginDVRWidget*>(this));
     return QWidget::qt_metacast(_clname);
@@ -87,36 +88,37 @@ int PluginDVRWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 struct qt_meta_stringdata_PluginDVR_t {
     QByteArrayData data[14];
-    char stringdata[202];
+    char stringdata[201];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_PluginDVR_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_PluginDVR_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_PluginDVR_t qt_meta_stringdata_PluginDVR = {
     {
-QT_MOC_LITERAL(0, 0, 9),
-QT_MOC_LITERAL(1, 10, 15),
-QT_MOC_LITERAL(2, 26, 0),
-QT_MOC_LITERAL(3, 27, 16),
-QT_MOC_LITERAL(4, 44, 19),
-QT_MOC_LITERAL(5, 64, 18),
-QT_MOC_LITERAL(6, 83, 20),
-QT_MOC_LITERAL(7, 104, 17),
-QT_MOC_LITERAL(8, 122, 17),
-QT_MOC_LITERAL(9, 140, 12),
-QT_MOC_LITERAL(10, 153, 13),
-QT_MOC_LITERAL(11, 167, 13),
-QT_MOC_LITERAL(12, 181, 15),
-QT_MOC_LITERAL(13, 197, 3)
+QT_MOC_LITERAL(0, 0, 9), // "PluginDVR"
+QT_MOC_LITERAL(1, 10, 15), // "slotModeToggled"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 16), // "slotPauseRefresh"
+QT_MOC_LITERAL(4, 44, 19), // "slotSeekModeToggled"
+QT_MOC_LITERAL(5, 64, 18), // "slotSeekFrameFirst"
+QT_MOC_LITERAL(6, 83, 20), // "slotSeekFrameForward"
+QT_MOC_LITERAL(7, 104, 17), // "slotSeekFrameBack"
+QT_MOC_LITERAL(8, 122, 17), // "slotSeekFrameLast"
+QT_MOC_LITERAL(9, 140, 12), // "slotMovieNew"
+QT_MOC_LITERAL(10, 153, 13), // "slotMovieLoad"
+QT_MOC_LITERAL(11, 167, 13), // "slotMovieSave"
+QT_MOC_LITERAL(12, 181, 15), // "jogValueChanged"
+QT_MOC_LITERAL(13, 197, 3) // "val"
+
     },
     "PluginDVR\0slotModeToggled\0\0slotPauseRefresh\0"
     "slotSeekModeToggled\0slotSeekFrameFirst\0"
     "slotSeekFrameForward\0slotSeekFrameBack\0"
     "slotSeekFrameLast\0slotMovieNew\0"
     "slotMovieLoad\0slotMovieSave\0jogValueChanged\0"
-    "val\0"
+    "val"
 };
 #undef QT_MOC_LITERAL
 
@@ -134,17 +136,17 @@ static const uint qt_meta_data_PluginDVR[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x09,
-       3,    0,   70,    2, 0x09,
-       4,    0,   71,    2, 0x09,
-       5,    0,   72,    2, 0x09,
-       6,    0,   73,    2, 0x09,
-       7,    0,   74,    2, 0x09,
-       8,    0,   75,    2, 0x09,
-       9,    0,   76,    2, 0x09,
-      10,    0,   77,    2, 0x09,
-      11,    0,   78,    2, 0x09,
-      12,    1,   79,    2, 0x09,
+       1,    0,   69,    2, 0x09 /* Protected */,
+       3,    0,   70,    2, 0x09 /* Protected */,
+       4,    0,   71,    2, 0x09 /* Protected */,
+       5,    0,   72,    2, 0x09 /* Protected */,
+       6,    0,   73,    2, 0x09 /* Protected */,
+       7,    0,   74,    2, 0x09 /* Protected */,
+       8,    0,   75,    2, 0x09 /* Protected */,
+       9,    0,   76,    2, 0x09 /* Protected */,
+      10,    0,   77,    2, 0x09 /* Protected */,
+      11,    0,   78,    2, 0x09 /* Protected */,
+      12,    1,   79,    2, 0x09 /* Protected */,
 
  // slots: parameters
     QMetaType::Void,
@@ -185,7 +187,7 @@ void PluginDVR::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
 
 const QMetaObject PluginDVR::staticMetaObject = {
     { &VisionPlugin::staticMetaObject, qt_meta_stringdata_PluginDVR.data,
-      qt_meta_data_PluginDVR,  qt_static_metacall, 0, 0}
+      qt_meta_data_PluginDVR,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -196,7 +198,7 @@ const QMetaObject *PluginDVR::metaObject() const
 
 void *PluginDVR::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_PluginDVR.stringdata))
         return static_cast<void*>(const_cast< PluginDVR*>(this));
     return VisionPlugin::qt_metacast(_clname);

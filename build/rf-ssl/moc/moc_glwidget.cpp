@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'glwidget.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'glwidget.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,37 +20,38 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_GLWidget_t {
     QByteArrayData data[16];
-    char stringdata[176];
+    char stringdata[175];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_GLWidget_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_GLWidget_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_GLWidget_t qt_meta_stringdata_GLWidget = {
     {
-QT_MOC_LITERAL(0, 0, 8),
-QT_MOC_LITERAL(1, 9, 16),
-QT_MOC_LITERAL(2, 26, 0),
-QT_MOC_LITERAL(3, 27, 10),
-QT_MOC_LITERAL(4, 38, 17),
-QT_MOC_LITERAL(5, 56, 12),
-QT_MOC_LITERAL(6, 69, 5),
-QT_MOC_LITERAL(7, 75, 8),
-QT_MOC_LITERAL(8, 84, 3),
-QT_MOC_LITERAL(9, 88, 19),
-QT_MOC_LITERAL(10, 108, 10),
-QT_MOC_LITERAL(11, 119, 9),
-QT_MOC_LITERAL(12, 129, 14),
-QT_MOC_LITERAL(13, 144, 11),
-QT_MOC_LITERAL(14, 156, 8),
-QT_MOC_LITERAL(15, 165, 9)
+QT_MOC_LITERAL(0, 0, 8), // "GLWidget"
+QT_MOC_LITERAL(1, 9, 16), // "updateVideoStats"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 10), // "VideoStats"
+QT_MOC_LITERAL(4, 38, 17), // "signalMouseAction"
+QT_MOC_LITERAL(5, 56, 12), // "QMouseEvent*"
+QT_MOC_LITERAL(6, 69, 5), // "event"
+QT_MOC_LITERAL(7, 75, 8), // "pixelloc"
+QT_MOC_LITERAL(8, 84, 3), // "loc"
+QT_MOC_LITERAL(9, 88, 19), // "signalKeyPressEvent"
+QT_MOC_LITERAL(10, 108, 10), // "QKeyEvent*"
+QT_MOC_LITERAL(11, 119, 9), // "flipImage"
+QT_MOC_LITERAL(12, 129, 14), // "callZoomNormal"
+QT_MOC_LITERAL(13, 144, 11), // "callZoomFit"
+QT_MOC_LITERAL(14, 156, 8), // "callHelp"
+QT_MOC_LITERAL(15, 165, 9) // "saveImage"
+
     },
     "GLWidget\0updateVideoStats\0\0VideoStats\0"
     "signalMouseAction\0QMouseEvent*\0event\0"
     "pixelloc\0loc\0signalKeyPressEvent\0"
     "QKeyEvent*\0flipImage\0callZoomNormal\0"
-    "callZoomFit\0callHelp\0saveImage\0"
+    "callZoomFit\0callHelp\0saveImage"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,16 +69,16 @@ static const uint qt_meta_data_GLWidget[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x06,
-       4,    2,   57,    2, 0x06,
-       9,    1,   62,    2, 0x06,
+       1,    1,   54,    2, 0x06 /* Public */,
+       4,    2,   57,    2, 0x06 /* Public */,
+       9,    1,   62,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    0,   65,    2, 0x0a,
-      12,    0,   66,    2, 0x0a,
-      13,    0,   67,    2, 0x0a,
-      14,    0,   68,    2, 0x0a,
-      15,    0,   69,    2, 0x0a,
+      11,    0,   65,    2, 0x0a /* Public */,
+      12,    0,   66,    2, 0x0a /* Public */,
+      13,    0,   67,    2, 0x0a /* Public */,
+      14,    0,   68,    2, 0x0a /* Public */,
+      15,    0,   69,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -135,7 +136,7 @@ void GLWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
 
 const QMetaObject GLWidget::staticMetaObject = {
     { &QGLWidget::staticMetaObject, qt_meta_stringdata_GLWidget.data,
-      qt_meta_data_GLWidget,  qt_static_metacall, 0, 0}
+      qt_meta_data_GLWidget,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -146,7 +147,7 @@ const QMetaObject *GLWidget::metaObject() const
 
 void *GLWidget::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_GLWidget.stringdata))
         return static_cast<void*>(const_cast< GLWidget*>(this));
     if (!strcmp(_clname, "RealTimeDisplayWidget"))
@@ -174,21 +175,21 @@ int GLWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void GLWidget::updateVideoStats(VideoStats _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
 void GLWidget::signalMouseAction(QMouseEvent * _t1, pixelloc _t2)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
 void GLWidget::signalKeyPressEvent(QKeyEvent * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 QT_END_MOC_NAMESPACE

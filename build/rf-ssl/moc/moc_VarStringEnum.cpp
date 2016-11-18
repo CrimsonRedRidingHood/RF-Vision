@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarStringEnum.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarStringEnum.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,18 +20,19 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarStringEnum_t {
     QByteArrayData data[1];
-    char stringdata[25];
+    char stringdata[24];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarStringEnum_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarStringEnum_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarStringEnum_t qt_meta_stringdata_VarTypes__VarStringEnum = {
     {
-QT_MOC_LITERAL(0, 0, 23)
+QT_MOC_LITERAL(0, 0, 23) // "VarTypes::VarStringEnum"
+
     },
-    "VarTypes::VarStringEnum\0"
+    "VarTypes::VarStringEnum"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +62,7 @@ void VarTypes::VarStringEnum::qt_static_metacall(QObject *_o, QMetaObject::Call 
 
 const QMetaObject VarTypes::VarStringEnum::staticMetaObject = {
     { &VarType::staticMetaObject, qt_meta_stringdata_VarTypes__VarStringEnum.data,
-      qt_meta_data_VarTypes__VarStringEnum,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarStringEnum,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -72,7 +73,7 @@ const QMetaObject *VarTypes::VarStringEnum::metaObject() const
 
 void *VarTypes::VarStringEnum::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarStringEnum.stringdata))
         return static_cast<void*>(const_cast< VarStringEnum*>(this));
     return VarType::qt_metacast(_clname);

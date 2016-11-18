@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarType.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarType.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,27 +20,28 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarType_t {
     QByteArrayData data[8];
-    char stringdata[92];
+    char stringdata[91];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarType_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarType_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarType_t qt_meta_stringdata_VarTypes__VarType = {
     {
-QT_MOC_LITERAL(0, 0, 17),
-QT_MOC_LITERAL(1, 18, 10),
-QT_MOC_LITERAL(2, 29, 0),
-QT_MOC_LITERAL(3, 30, 8),
-QT_MOC_LITERAL(4, 39, 9),
-QT_MOC_LITERAL(5, 49, 10),
-QT_MOC_LITERAL(6, 60, 13),
-QT_MOC_LITERAL(7, 74, 16)
+QT_MOC_LITERAL(0, 0, 17), // "VarTypes::VarType"
+QT_MOC_LITERAL(1, 18, 10), // "hasChanged"
+QT_MOC_LITERAL(2, 29, 0), // ""
+QT_MOC_LITERAL(3, 30, 8), // "VarType*"
+QT_MOC_LITERAL(4, 39, 9), // "wasEdited"
+QT_MOC_LITERAL(5, 49, 10), // "XMLwasRead"
+QT_MOC_LITERAL(6, 60, 13), // "XMLwasWritten"
+QT_MOC_LITERAL(7, 74, 16) // "mvcEditCompleted"
+
     },
     "VarTypes::VarType\0hasChanged\0\0VarType*\0"
     "wasEdited\0XMLwasRead\0XMLwasWritten\0"
-    "mvcEditCompleted\0"
+    "mvcEditCompleted"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,13 +59,13 @@ static const uint qt_meta_data_VarTypes__VarType[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x06,
-       4,    1,   42,    2, 0x06,
-       5,    1,   45,    2, 0x06,
-       6,    1,   48,    2, 0x06,
+       1,    1,   39,    2, 0x06 /* Public */,
+       4,    1,   42,    2, 0x06 /* Public */,
+       5,    1,   45,    2, 0x06 /* Public */,
+       6,    1,   48,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    0,   51,    2, 0x0a,
+       7,    0,   51,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -154,7 +155,7 @@ void VarTypes::VarType::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
 
 const QMetaObject VarTypes::VarType::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_VarTypes__VarType.data,
-      qt_meta_data_VarTypes__VarType,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarType,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -165,7 +166,7 @@ const QMetaObject *VarTypes::VarType::metaObject() const
 
 void *VarTypes::VarType::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarType.stringdata))
         return static_cast<void*>(const_cast< VarType*>(this));
     if (!strcmp(_clname, "VarVal"))
@@ -193,28 +194,28 @@ int VarTypes::VarType::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void VarTypes::VarType::hasChanged(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
 void VarTypes::VarType::wasEdited(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
 void VarTypes::VarType::XMLwasRead(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
 void VarTypes::VarType::XMLwasWritten(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 QT_END_MOC_NAMESPACE

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarNotifier.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarNotifier.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,26 +20,27 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarNotifier_t {
     QByteArrayData data[7];
-    char stringdata[85];
+    char stringdata[84];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarNotifier_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarNotifier_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarNotifier_t qt_meta_stringdata_VarTypes__VarNotifier = {
     {
-QT_MOC_LITERAL(0, 0, 21),
-QT_MOC_LITERAL(1, 22, 13),
-QT_MOC_LITERAL(2, 36, 0),
-QT_MOC_LITERAL(3, 37, 8),
-QT_MOC_LITERAL(4, 46, 4),
-QT_MOC_LITERAL(5, 51, 21),
-QT_MOC_LITERAL(6, 73, 10)
+QT_MOC_LITERAL(0, 0, 21), // "VarTypes::VarNotifier"
+QT_MOC_LITERAL(1, 22, 13), // "changeOccured"
+QT_MOC_LITERAL(2, 36, 0), // ""
+QT_MOC_LITERAL(3, 37, 8), // "VarType*"
+QT_MOC_LITERAL(4, 46, 4), // "item"
+QT_MOC_LITERAL(5, 51, 21), // "changeSlotOtherChange"
+QT_MOC_LITERAL(6, 73, 10) // "changeSlot"
+
     },
     "VarTypes::VarNotifier\0changeOccured\0"
     "\0VarType*\0item\0changeSlotOtherChange\0"
-    "changeSlot\0"
+    "changeSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,11 +58,11 @@ static const uint qt_meta_data_VarTypes__VarNotifier[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x06,
+       1,    1,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   32,    2, 0x0a,
-       6,    1,   33,    2, 0x09,
+       5,    0,   32,    2, 0x0a /* Public */,
+       6,    1,   33,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -115,7 +116,7 @@ void VarTypes::VarNotifier::qt_static_metacall(QObject *_o, QMetaObject::Call _c
 
 const QMetaObject VarTypes::VarNotifier::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_VarTypes__VarNotifier.data,
-      qt_meta_data_VarTypes__VarNotifier,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarNotifier,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -126,7 +127,7 @@ const QMetaObject *VarTypes::VarNotifier::metaObject() const
 
 void *VarTypes::VarNotifier::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarNotifier.stringdata))
         return static_cast<void*>(const_cast< VarNotifier*>(this));
     return QObject::qt_metacast(_clname);
@@ -152,7 +153,7 @@ int VarTypes::VarNotifier::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void VarTypes::VarNotifier::changeOccured(VarType * _t1)
 {
-    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE

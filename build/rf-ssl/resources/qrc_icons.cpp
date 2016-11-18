@@ -1,15 +1,13 @@
 /****************************************************************************
 ** Resource object code
 **
-** Created by: The Resource Compiler for Qt version 5.2.1
+** Created by: The Resource Compiler for Qt version 5.4.2
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <QtCore/qglobal.h>
-
 static const unsigned char qt_resource_data[] = {
-  // D:/Work/GIT/SSL/rf-common/vartypes/gui/icons/list.png
+  // C:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui/icons/list.png
   0x0,0x0,0x8,0x23,
   0x89,
   0x50,0x4e,0x47,0xd,0xa,0x1a,0xa,0x0,0x0,0x0,0xd,0x49,0x48,0x44,0x52,0x0,
@@ -143,7 +141,7 @@ static const unsigned char qt_resource_data[] = {
   0xb7,0x38,0x17,0xf6,0x80,0x35,0x81,0x57,0x2f,0xd0,0xff,0xb9,0xfd,0x1d,0x46,0x51,
   0xe5,0x37,0x3c,0x55,0x22,0x57,0x0,0x0,0x0,0x0,0x49,0x45,0x4e,0x44,0xae,0x42,
   0x60,0x82,
-    // D:/Work/GIT/SSL/rf-common/vartypes/gui/icons/time.png
+    // C:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui/icons/time.png
   0x0,0x0,0xa,0xaa,
   0x89,
   0x50,0x4e,0x47,0xd,0xa,0x1a,0xa,0x0,0x0,0x0,0xd,0x49,0x48,0x44,0x52,0x0,
@@ -317,7 +315,7 @@ static const unsigned char qt_resource_data[] = {
   0x34,0x82,0x54,0xb,0x9e,0xba,0x7c,0x8c,0x5c,0x1b,0x9c,0x85,0xf7,0x4,0x67,0x0,
   0xfb,0xa3,0x26,0xfc,0x1f,0x35,0xcc,0x50,0x7f,0xd0,0x8e,0xc9,0xa8,0x0,0x0,0x0,
   0x0,0x49,0x45,0x4e,0x44,0xae,0x42,0x60,0x82,
-    // D:/Work/GIT/SSL/rf-common/vartypes/gui/icons/node.png
+    // C:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui/icons/node.png
   0x0,0x0,0x8,0x6b,
   0x89,
   0x50,0x4e,0x47,0xd,0xa,0x1a,0xa,0x0,0x0,0x0,0xd,0x49,0x48,0x44,0x52,0x0,
@@ -455,7 +453,7 @@ static const unsigned char qt_resource_data[] = {
   0x17,0xae,0xf2,0x62,0xc7,0x28,0x76,0xac,0x6d,0x67,0xd,0x17,0xeb,0x67,0xbd,0xe3,
   0x9d,0xa6,0xa5,0xa2,0xff,0x27,0x41,0xe6,0x4c,0xaf,0x3b,0xe9,0x3f,0xf7,0x0,0x0,
   0x0,0x0,0x49,0x45,0x4e,0x44,0xae,0x42,0x60,0x82,
-    // D:/Work/GIT/SSL/rf-common/vartypes/gui/icons/external.png
+    // C:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui/icons/external.png
   0x0,0x0,0x9,0x4b,
   0x89,
   0x50,0x4e,0x47,0xd,0xa,0x1a,0xa,0x0,0x0,0x0,0xd,0x49,0x48,0x44,0x52,0x0,
@@ -662,32 +660,49 @@ static const unsigned char qt_resource_struct[] = {
 
 };
 
-QT_BEGIN_NAMESPACE
+#ifdef QT_NAMESPACE
+#  define QT_RCC_PREPEND_NAMESPACE(name) ::QT_NAMESPACE::name
+#  define QT_RCC_MANGLE_NAMESPACE0(x) x
+#  define QT_RCC_MANGLE_NAMESPACE1(a, b) a##_##b
+#  define QT_RCC_MANGLE_NAMESPACE2(a, b) QT_RCC_MANGLE_NAMESPACE1(a,b)
+#  define QT_RCC_MANGLE_NAMESPACE(name) QT_RCC_MANGLE_NAMESPACE2( \
+        QT_RCC_MANGLE_NAMESPACE0(name), QT_RCC_MANGLE_NAMESPACE0(QT_NAMESPACE))
+#else
+#   define QT_RCC_PREPEND_NAMESPACE(name) name
+#   define QT_RCC_MANGLE_NAMESPACE(name) name
+#endif
 
-extern Q_CORE_EXPORT bool qRegisterResourceData
-    (int, const unsigned char *, const unsigned char *, const unsigned char *);
+#ifdef QT_NAMESPACE
+namespace QT_NAMESPACE {
+#endif
 
-extern Q_CORE_EXPORT bool qUnregisterResourceData
-    (int, const unsigned char *, const unsigned char *, const unsigned char *);
+bool qRegisterResourceData(int, const unsigned char *, const unsigned char *, const unsigned char *);
 
-QT_END_NAMESPACE
+bool qUnregisterResourceData(int, const unsigned char *, const unsigned char *, const unsigned char *);
 
+#ifdef QT_NAMESPACE
+}
+#endif
 
-int QT_MANGLE_NAMESPACE(qInitResources_icons)()
+int QT_RCC_MANGLE_NAMESPACE(qInitResources_icons)();
+int QT_RCC_MANGLE_NAMESPACE(qInitResources_icons)()
 {
-    QT_PREPEND_NAMESPACE(qRegisterResourceData)
+    QT_RCC_PREPEND_NAMESPACE(qRegisterResourceData)
         (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
     return 1;
 }
 
-Q_CONSTRUCTOR_FUNCTION(QT_MANGLE_NAMESPACE(qInitResources_icons))
-
-int QT_MANGLE_NAMESPACE(qCleanupResources_icons)()
+int QT_RCC_MANGLE_NAMESPACE(qCleanupResources_icons)();
+int QT_RCC_MANGLE_NAMESPACE(qCleanupResources_icons)()
 {
-    QT_PREPEND_NAMESPACE(qUnregisterResourceData)
+    QT_RCC_PREPEND_NAMESPACE(qUnregisterResourceData)
        (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
     return 1;
 }
 
-Q_DESTRUCTOR_FUNCTION(QT_MANGLE_NAMESPACE(qCleanupResources_icons))
-
+namespace {
+   struct initializer {
+       initializer() { QT_RCC_MANGLE_NAMESPACE(qInitResources_icons)(); }
+       ~initializer() { QT_RCC_MANGLE_NAMESPACE(qCleanupResources_icons)(); }
+   } dummy;
+}

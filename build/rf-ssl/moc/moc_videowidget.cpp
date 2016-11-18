@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'videowidget.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'videowidget.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,28 +20,29 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VideoWidget_t {
     QByteArrayData data[9];
-    char stringdata[92];
+    char stringdata[91];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VideoWidget_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VideoWidget_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VideoWidget_t qt_meta_stringdata_VideoWidget = {
     {
-QT_MOC_LITERAL(0, 0, 11),
-QT_MOC_LITERAL(1, 12, 17),
-QT_MOC_LITERAL(2, 30, 0),
-QT_MOC_LITERAL(3, 31, 10),
-QT_MOC_LITERAL(4, 42, 5),
-QT_MOC_LITERAL(5, 48, 8),
-QT_MOC_LITERAL(6, 57, 3),
-QT_MOC_LITERAL(7, 61, 12),
-QT_MOC_LITERAL(8, 74, 16)
+QT_MOC_LITERAL(0, 0, 11), // "VideoWidget"
+QT_MOC_LITERAL(1, 12, 17), // "processVideoStats"
+QT_MOC_LITERAL(2, 30, 0), // ""
+QT_MOC_LITERAL(3, 31, 10), // "VideoStats"
+QT_MOC_LITERAL(4, 42, 5), // "stats"
+QT_MOC_LITERAL(5, 48, 8), // "toggleOn"
+QT_MOC_LITERAL(6, 57, 3), // "val"
+QT_MOC_LITERAL(7, 61, 12), // "toggleWindow"
+QT_MOC_LITERAL(8, 74, 16) // "toggleFullScreen"
+
     },
     "VideoWidget\0processVideoStats\0\0"
     "VideoStats\0stats\0toggleOn\0val\0"
-    "toggleWindow\0toggleFullScreen\0"
+    "toggleWindow\0toggleFullScreen"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,10 +60,10 @@ static const uint qt_meta_data_VideoWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x0a,
-       5,    1,   37,    2, 0x0a,
-       7,    1,   40,    2, 0x0a,
-       8,    1,   43,    2, 0x0a,
+       1,    1,   34,    2, 0x0a /* Public */,
+       5,    1,   37,    2, 0x0a /* Public */,
+       7,    1,   40,    2, 0x0a /* Public */,
+       8,    1,   43,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -89,7 +90,7 @@ void VideoWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
 
 const QMetaObject VideoWidget::staticMetaObject = {
     { &QWidget::staticMetaObject, qt_meta_stringdata_VideoWidget.data,
-      qt_meta_data_VideoWidget,  qt_static_metacall, 0, 0}
+      qt_meta_data_VideoWidget,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -100,7 +101,7 @@ const QMetaObject *VideoWidget::metaObject() const
 
 void *VideoWidget::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VideoWidget.stringdata))
         return static_cast<void*>(const_cast< VideoWidget*>(this));
     if (!strcmp(_clname, "Ui_VideoWidget"))

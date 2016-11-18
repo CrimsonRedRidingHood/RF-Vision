@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'cmpattern_teamdetector.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'cmpattern_teamdetector.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,26 +20,27 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CMPattern__TeamDetectorSettings_t {
     QByteArrayData data[7];
-    char stringdata[97];
+    char stringdata[96];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_CMPattern__TeamDetectorSettings_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_CMPattern__TeamDetectorSettings_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_CMPattern__TeamDetectorSettings_t qt_meta_stringdata_CMPattern__TeamDetectorSettings = {
     {
-QT_MOC_LITERAL(0, 0, 31),
-QT_MOC_LITERAL(1, 32, 15),
-QT_MOC_LITERAL(2, 48, 0),
-QT_MOC_LITERAL(3, 49, 17),
-QT_MOC_LITERAL(4, 67, 8),
-QT_MOC_LITERAL(5, 76, 4),
-QT_MOC_LITERAL(6, 81, 14)
+QT_MOC_LITERAL(0, 0, 31), // "CMPattern::TeamDetectorSettings"
+QT_MOC_LITERAL(1, 32, 15), // "teamInfoChanged"
+QT_MOC_LITERAL(2, 48, 0), // ""
+QT_MOC_LITERAL(3, 49, 17), // "slotTeamNodeAdded"
+QT_MOC_LITERAL(4, 67, 8), // "VarType*"
+QT_MOC_LITERAL(5, 76, 4), // "node"
+QT_MOC_LITERAL(6, 81, 14) // "slotAddPressed"
+
     },
     "CMPattern::TeamDetectorSettings\0"
     "teamInfoChanged\0\0slotTeamNodeAdded\0"
-    "VarType*\0node\0slotAddPressed\0"
+    "VarType*\0node\0slotAddPressed"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,11 +58,11 @@ static const uint qt_meta_data_CMPattern__TeamDetectorSettings[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06,
+       1,    0,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    1,   30,    2, 0x09,
-       6,    0,   33,    2, 0x09,
+       3,    1,   30,    2, 0x09 /* Protected */,
+       6,    0,   33,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void,
@@ -108,7 +109,7 @@ void CMPattern::TeamDetectorSettings::qt_static_metacall(QObject *_o, QMetaObjec
 
 const QMetaObject CMPattern::TeamDetectorSettings::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_CMPattern__TeamDetectorSettings.data,
-      qt_meta_data_CMPattern__TeamDetectorSettings,  qt_static_metacall, 0, 0}
+      qt_meta_data_CMPattern__TeamDetectorSettings,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -119,7 +120,7 @@ const QMetaObject *CMPattern::TeamDetectorSettings::metaObject() const
 
 void *CMPattern::TeamDetectorSettings::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_CMPattern__TeamDetectorSettings.stringdata))
         return static_cast<void*>(const_cast< TeamDetectorSettings*>(this));
     return QObject::qt_metacast(_clname);
@@ -145,27 +146,28 @@ int CMPattern::TeamDetectorSettings::qt_metacall(QMetaObject::Call _c, int _id, 
 // SIGNAL 0
 void CMPattern::TeamDetectorSettings::teamInfoChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 struct qt_meta_stringdata_CMPattern__TeamSelector_t {
     QByteArrayData data[5];
-    char stringdata[88];
+    char stringdata[87];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_CMPattern__TeamSelector_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_CMPattern__TeamSelector_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_CMPattern__TeamSelector_t qt_meta_stringdata_CMPattern__TeamSelector = {
     {
-QT_MOC_LITERAL(0, 0, 23),
-QT_MOC_LITERAL(1, 24, 21),
-QT_MOC_LITERAL(2, 46, 0),
-QT_MOC_LITERAL(3, 47, 19),
-QT_MOC_LITERAL(4, 67, 19)
+QT_MOC_LITERAL(0, 0, 23), // "CMPattern::TeamSelector"
+QT_MOC_LITERAL(1, 24, 21), // "signalTeamDataChanged"
+QT_MOC_LITERAL(2, 46, 0), // ""
+QT_MOC_LITERAL(3, 47, 19), // "slotTeamInfoChanged"
+QT_MOC_LITERAL(4, 67, 19) // "slotTeamDataChanged"
+
     },
     "CMPattern::TeamSelector\0signalTeamDataChanged\0"
-    "\0slotTeamInfoChanged\0slotTeamDataChanged\0"
+    "\0slotTeamInfoChanged\0slotTeamDataChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -183,11 +185,11 @@ static const uint qt_meta_data_CMPattern__TeamSelector[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06,
+       1,    0,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   30,    2, 0x09,
-       4,    0,   31,    2, 0x09,
+       3,    0,   30,    2, 0x09 /* Protected */,
+       4,    0,   31,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void,
@@ -224,7 +226,7 @@ void CMPattern::TeamSelector::qt_static_metacall(QObject *_o, QMetaObject::Call 
 
 const QMetaObject CMPattern::TeamSelector::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_CMPattern__TeamSelector.data,
-      qt_meta_data_CMPattern__TeamSelector,  qt_static_metacall, 0, 0}
+      qt_meta_data_CMPattern__TeamSelector,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -235,7 +237,7 @@ const QMetaObject *CMPattern::TeamSelector::metaObject() const
 
 void *CMPattern::TeamSelector::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_CMPattern__TeamSelector.stringdata))
         return static_cast<void*>(const_cast< TeamSelector*>(this));
     return QObject::qt_metacast(_clname);
@@ -261,6 +263,6 @@ int CMPattern::TeamSelector::qt_metacall(QMetaObject::Call _c, int _id, void **_
 // SIGNAL 0
 void CMPattern::TeamSelector::signalTeamDataChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

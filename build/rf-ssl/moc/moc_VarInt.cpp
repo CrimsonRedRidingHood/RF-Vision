@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VarInt.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VarInt.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.2.1. It"
+#error "This file was generated using the moc from 5.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,18 +20,19 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_VarTypes__VarInt_t {
     QByteArrayData data[1];
-    char stringdata[18];
+    char stringdata[17];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_VarTypes__VarInt_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_VarTypes__VarInt_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_VarTypes__VarInt_t qt_meta_stringdata_VarTypes__VarInt = {
     {
-QT_MOC_LITERAL(0, 0, 16)
+QT_MOC_LITERAL(0, 0, 16) // "VarTypes::VarInt"
+
     },
-    "VarTypes::VarInt\0"
+    "VarTypes::VarInt"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +62,7 @@ void VarTypes::VarInt::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
 
 const QMetaObject VarTypes::VarInt::staticMetaObject = {
     { &VarTypeTemplate<VarIntVal>::staticMetaObject, qt_meta_stringdata_VarTypes__VarInt.data,
-      qt_meta_data_VarTypes__VarInt,  qt_static_metacall, 0, 0}
+      qt_meta_data_VarTypes__VarInt,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -72,7 +73,7 @@ const QMetaObject *VarTypes::VarInt::metaObject() const
 
 void *VarTypes::VarInt::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_VarTypes__VarInt.stringdata))
         return static_cast<void*>(const_cast< VarInt*>(this));
     return VarTypeTemplate<VarIntVal>::qt_metacast(_clname);
