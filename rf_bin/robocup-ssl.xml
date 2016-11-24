@@ -500,6 +500,8 @@
 				</Var>
 			</Var>
 		</Var>
+		<Var name="CameraSettings Settings" type="list">
+		</Var>
 		<Var name="Blob Finding" type="list">
 			<Var name="min_blob_area" type="int" minval="" maxval="">
 				5
@@ -836,6 +838,8 @@
 					4
 				</Var>
 			</Var>
+		</Var>
+		<Var name="CameraSettings Settings" type="list">
 		</Var>
 		<Var name="Blob Finding" type="list">
 			<Var name="min_blob_area" type="int" minval="" maxval="">

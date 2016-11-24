@@ -41,6 +41,10 @@ StackRoboCupSSL::StackRoboCupSSL(RenderOptions * _opts, FrameBuffer * _fb, int c
 
     stack.push_back(new PluginCameraCalibration(_fb,*camera_parameters,*calib_field));
 
+    stack.push_back(new PluginCameraSettings(_fb,(*camera_parameters)));
+
+    qDebug() << "PluginCameraSettings pushed successfully";
+
     stack.push_back(new PluginColorThreshold(_fb,lut_yuv));
 
     //initialize the runlength encoder...

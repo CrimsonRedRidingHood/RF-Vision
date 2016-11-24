@@ -39,6 +39,7 @@
 #include "plugin_dvr.h"
 #include "cmpattern_teamdetector.h"
 #include "robocup_ssl_server.h"
+#include "plugin_camerasettings.h"
 
 using namespace std;
 

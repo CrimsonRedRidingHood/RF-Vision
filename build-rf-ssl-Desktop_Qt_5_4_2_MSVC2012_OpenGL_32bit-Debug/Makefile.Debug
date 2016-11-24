@@ -129,7 +129,9 @@ SOURCES       = ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
 		..\rf-common\vartypes\primitives\VarBool.cpp \
 		..\rf-common\vartypes\primitives\VarBlob.cpp \
 		..\rf-common\vartypes\xml\xmlParser.cpp \
-		..\rf-ssl\gui\camerasettings.cpp ..\build\rf-ssl\resources\qrc_icons_gui.cpp \
+		..\rf-ssl\gui\camerasettings.cpp \
+		..\rf-ssl\plugins\plugin_camerasettings.cpp \
+		..\rf-ssl\gui\camerasettingswidget.cpp ..\build\rf-ssl\resources\qrc_icons_gui.cpp \
 		..\build\rf-ssl\resources\qrc_icons.cpp \
 		..\build\rf-ssl\moc\moc_capture_thread.cpp \
 		..\build\rf-ssl\moc\moc_videowidget.cpp \
@@ -166,7 +168,8 @@ SOURCES       = ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
 		..\build\rf-ssl\moc\moc_VarDouble.cpp \
 		..\build\rf-ssl\moc\moc_VarBool.cpp \
 		..\build\rf-ssl\moc\moc_VarBlob.cpp \
-		..\build\rf-ssl\moc\moc_camerasettings.cpp
+		..\build\rf-ssl\moc\moc_camerasettings.cpp \
+		..\build\rf-ssl\moc\moc_camerasettingswidget.cpp
 OBJECTS       = ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj \
 		..\build\rf-ssl\objd\messages_robocup_ssl_geometry.pb.obj \
 		..\build\rf-ssl\objd\messages_robocup_ssl_refbox_log.pb.obj \
@@ -254,6 +257,8 @@ OBJECTS       = ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj \
 		..\build\rf-ssl\objd\VarBlob.obj \
 		..\build\rf-ssl\objd\xmlParser.obj \
 		..\build\rf-ssl\objd\camerasettings.obj \
+		..\build\rf-ssl\objd\plugin_camerasettings.obj \
+		..\build\rf-ssl\objd\camerasettingswidget.obj \
 		..\build\rf-ssl\objd\qrc_icons_gui.obj \
 		..\build\rf-ssl\objd\qrc_icons.obj \
 		..\build\rf-ssl\objd\moc_capture_thread.obj \
@@ -292,6 +297,7 @@ OBJECTS       = ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj \
 		..\build\rf-ssl\objd\moc_VarBool.obj \
 		..\build\rf-ssl\objd\moc_VarBlob.obj \
 		..\build\rf-ssl\objd\moc_camerasettings.obj \
+		..\build\rf-ssl\objd\moc_camerasettingswidget.obj \
 		debug\rf-vision_pch.obj
 
 DIST          =  ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
@@ -405,7 +411,9 @@ DIST          =  ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\vartypes\primitives\VarBool.h \
 		..\rf-common\vartypes\primitives\VarBlob.h \
 		..\rf-common\vartypes\xml\xmlParser.h \
-		..\rf-ssl\gui\camerasettings.h ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
+		..\rf-ssl\gui\camerasettings.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_refbox_log.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_wrapper.pb.cc \
@@ -491,7 +499,9 @@ DIST          =  ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\vartypes\primitives\VarBool.cpp \
 		..\rf-common\vartypes\primitives\VarBlob.cpp \
 		..\rf-common\vartypes\xml\xmlParser.cpp \
-		..\rf-ssl\gui\camerasettings.cpp
+		..\rf-ssl\gui\camerasettings.cpp \
+		..\rf-ssl\plugins\plugin_camerasettings.cpp \
+		..\rf-ssl\gui\camerasettingswidget.cpp
 QMAKE_TARGET  = rf-vision
 DESTDIR        = ..\rf_bind\ #avoid trailing-slash linebreak
 TARGET         = rf-vision.exe
@@ -913,8 +923,8 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_geometry.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_refbox_log.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_wrapper.pb.obj ..\build\rf-ssl\objd\main.obj ..\build\rf-ssl\objd\framedata.obj ..\build\rf-ssl\objd\capture_thread.obj ..\build\rf-ssl\objd\videowidget.obj ..\build\rf-ssl\objd\renderoptions.obj ..\build\rf-ssl\objd\realtimedisplaywidget.obj ..\build\rf-ssl\objd\mainwindow.obj ..\build\rf-ssl\objd\lutwidget.obj ..\build\rf-ssl\objd\jog_dial.obj ..\build\rf-ssl\objd\glwidget.obj ..\build\rf-ssl\objd\glLUTwidget.obj ..\build\rf-ssl\objd\colorpicker.obj ..\build\rf-ssl\objd\cameracalibwidget.obj ..\build\rf-ssl\objd\visionplugin.obj ..\build\rf-ssl\objd\plugin_visualize.obj ..\build\rf-ssl\objd\plugin_sslnetworkoutput.obj ..\build\rf-ssl\objd\plugin_runlength_encode.obj ..\build\rf-ssl\objd\plugin_publishgeometry.obj ..\build\rf-ssl\objd\plugin_find_blobs.obj ..\build\rf-ssl\objd\plugin_dvr.obj ..\build\rf-ssl\objd\plugin_detect_robots.obj ..\build\rf-ssl\objd\plugin_detect_balls.obj ..\build\rf-ssl\objd\plugin_colorthreshold.obj ..\build\rf-ssl\objd\plugin_colorcalib.obj ..\build\rf-ssl\objd\plugin_cameracalib.obj ..\build\rf-ssl\objd\visionstack.obj ..\build\rf-ssl\objd\stack_robocup_ssl.obj ..\build\rf-ssl\objd\multivisionstack.obj ..\build\rf-ssl\objd\multistack_robocup_ssl.obj ..\build\rf-ssl\objd\captureinterface.obj ..\build\rf-ssl\objd\capture_generator.obj ..\build\rf-ssl\objd\capturefromfile.obj ..\build\rf-ssl\objd\captureopencv.obj ..\build\rf-ssl\objd\cmpattern_teamdetector.obj ..\build\rf-ssl\objd\cmpattern_team.obj ..\build\rf-ssl\objd\cmpattern_pattern.obj ..\build\rf-ssl\objd\cmvision_threshold.obj ..\build\rf-ssl\objd\cmvision_region.obj ..\build\rf-ssl\objd\cmvision_histogram.obj ..\build\rf-ssl\objd\globject.obj ..\build\rf-ssl\objd\glcamera.obj ..\build\rf-ssl\objd\netraw.obj ..\build\rf-ssl\objd\robocup_ssl_server.obj ..\build\rf-ssl\objd\texture.obj
-	-$(DEL_FILE) ..\build\rf-ssl\objd\ringbuffer.obj ..\build\rf-ssl\objd\rawimage.obj ..\build\rf-ssl\objd\qgetopt.obj ..\build\rf-ssl\objd\lut3d.obj ..\build\rf-ssl\objd\image_io.obj ..\build\rf-ssl\objd\image.obj ..\build\rf-ssl\objd\framelimiter.obj ..\build\rf-ssl\objd\conversions.obj ..\build\rf-ssl\objd\camera_calibration.obj ..\build\rf-ssl\objd\VarXML.obj ..\build\rf-ssl\objd\VarTypesInstance.obj ..\build\rf-ssl\objd\VarTypesFactory.obj ..\build\rf-ssl\objd\VarTypes.obj ..\build\rf-ssl\objd\VarNotifier.obj ..\build\rf-ssl\objd\VarBase64.obj ..\build\rf-ssl\objd\VarTreeViewOptions.obj ..\build\rf-ssl\objd\VarTreeView.obj ..\build\rf-ssl\objd\VarTreeModel.obj ..\build\rf-ssl\objd\VarItemDelegate.obj ..\build\rf-ssl\objd\VarItem.obj ..\build\rf-ssl\objd\VarVal.obj ..\build\rf-ssl\objd\VarType.obj ..\build\rf-ssl\objd\VarTrigger.obj ..\build\rf-ssl\objd\VarStringVal.obj ..\build\rf-ssl\objd\VarStringEnum.obj ..\build\rf-ssl\objd\VarString.obj ..\build\rf-ssl\objd\VarSelection.obj ..\build\rf-ssl\objd\VarQWidget.obj ..\build\rf-ssl\objd\VarList.obj ..\build\rf-ssl\objd\VarIntVal.obj ..\build\rf-ssl\objd\VarInt.obj ..\build\rf-ssl\objd\VarExternal.obj ..\build\rf-ssl\objd\VarDoubleVal.obj ..\build\rf-ssl\objd\VarDouble.obj ..\build\rf-ssl\objd\VarBoolVal.obj ..\build\rf-ssl\objd\VarBool.obj ..\build\rf-ssl\objd\VarBlob.obj ..\build\rf-ssl\objd\xmlParser.obj ..\build\rf-ssl\objd\camerasettings.obj ..\build\rf-ssl\objd\qrc_icons_gui.obj ..\build\rf-ssl\objd\qrc_icons.obj ..\build\rf-ssl\objd\moc_capture_thread.obj ..\build\rf-ssl\objd\moc_videowidget.obj ..\build\rf-ssl\objd\moc_mainwindow.obj ..\build\rf-ssl\objd\moc_lutwidget.obj ..\build\rf-ssl\objd\moc_jog_dial.obj ..\build\rf-ssl\objd\moc_glwidget.obj ..\build\rf-ssl\objd\moc_glLUTwidget.obj ..\build\rf-ssl\objd\moc_cameracalibwidget.obj ..\build\rf-ssl\objd\moc_visionplugin.obj ..\build\rf-ssl\objd\moc_plugin_publishgeometry.obj ..\build\rf-ssl\objd\moc_plugin_dvr.obj ..\build\rf-ssl\objd\moc_multistack_robocup_ssl.obj
-	-$(DEL_FILE) ..\build\rf-ssl\objd\moc_capture_generator.obj ..\build\rf-ssl\objd\moc_capturefromfile.obj ..\build\rf-ssl\objd\moc_cmpattern_teamdetector.obj ..\build\rf-ssl\objd\moc_cmpattern_team.obj ..\build\rf-ssl\objd\moc_lut3d.obj ..\build\rf-ssl\objd\moc_field.obj ..\build\rf-ssl\objd\moc_VarNotifier.obj ..\build\rf-ssl\objd\moc_VarTreeView.obj ..\build\rf-ssl\objd\moc_VarTreeModel.obj ..\build\rf-ssl\objd\moc_VarItemDelegate.obj ..\build\rf-ssl\objd\moc_VarItem.obj ..\build\rf-ssl\objd\moc_VarType.obj ..\build\rf-ssl\objd\moc_VarTrigger.obj ..\build\rf-ssl\objd\moc_VarStringEnum.obj ..\build\rf-ssl\objd\moc_VarString.obj ..\build\rf-ssl\objd\moc_VarSelection.obj ..\build\rf-ssl\objd\moc_VarQWidget.obj ..\build\rf-ssl\objd\moc_VarList.obj ..\build\rf-ssl\objd\moc_VarInt.obj ..\build\rf-ssl\objd\moc_VarExternal.obj ..\build\rf-ssl\objd\moc_VarDouble.obj ..\build\rf-ssl\objd\moc_VarBool.obj ..\build\rf-ssl\objd\moc_VarBlob.obj ..\build\rf-ssl\objd\moc_camerasettings.obj debug\rf-vision_pch.obj
+	-$(DEL_FILE) ..\build\rf-ssl\objd\ringbuffer.obj ..\build\rf-ssl\objd\rawimage.obj ..\build\rf-ssl\objd\qgetopt.obj ..\build\rf-ssl\objd\lut3d.obj ..\build\rf-ssl\objd\image_io.obj ..\build\rf-ssl\objd\image.obj ..\build\rf-ssl\objd\framelimiter.obj ..\build\rf-ssl\objd\conversions.obj ..\build\rf-ssl\objd\camera_calibration.obj ..\build\rf-ssl\objd\VarXML.obj ..\build\rf-ssl\objd\VarTypesInstance.obj ..\build\rf-ssl\objd\VarTypesFactory.obj ..\build\rf-ssl\objd\VarTypes.obj ..\build\rf-ssl\objd\VarNotifier.obj ..\build\rf-ssl\objd\VarBase64.obj ..\build\rf-ssl\objd\VarTreeViewOptions.obj ..\build\rf-ssl\objd\VarTreeView.obj ..\build\rf-ssl\objd\VarTreeModel.obj ..\build\rf-ssl\objd\VarItemDelegate.obj ..\build\rf-ssl\objd\VarItem.obj ..\build\rf-ssl\objd\VarVal.obj ..\build\rf-ssl\objd\VarType.obj ..\build\rf-ssl\objd\VarTrigger.obj ..\build\rf-ssl\objd\VarStringVal.obj ..\build\rf-ssl\objd\VarStringEnum.obj ..\build\rf-ssl\objd\VarString.obj ..\build\rf-ssl\objd\VarSelection.obj ..\build\rf-ssl\objd\VarQWidget.obj ..\build\rf-ssl\objd\VarList.obj ..\build\rf-ssl\objd\VarIntVal.obj ..\build\rf-ssl\objd\VarInt.obj ..\build\rf-ssl\objd\VarExternal.obj ..\build\rf-ssl\objd\VarDoubleVal.obj ..\build\rf-ssl\objd\VarDouble.obj ..\build\rf-ssl\objd\VarBoolVal.obj ..\build\rf-ssl\objd\VarBool.obj ..\build\rf-ssl\objd\VarBlob.obj ..\build\rf-ssl\objd\xmlParser.obj ..\build\rf-ssl\objd\camerasettings.obj ..\build\rf-ssl\objd\plugin_camerasettings.obj ..\build\rf-ssl\objd\camerasettingswidget.obj ..\build\rf-ssl\objd\qrc_icons_gui.obj ..\build\rf-ssl\objd\qrc_icons.obj ..\build\rf-ssl\objd\moc_capture_thread.obj ..\build\rf-ssl\objd\moc_videowidget.obj ..\build\rf-ssl\objd\moc_mainwindow.obj ..\build\rf-ssl\objd\moc_lutwidget.obj ..\build\rf-ssl\objd\moc_jog_dial.obj ..\build\rf-ssl\objd\moc_glwidget.obj ..\build\rf-ssl\objd\moc_glLUTwidget.obj ..\build\rf-ssl\objd\moc_cameracalibwidget.obj ..\build\rf-ssl\objd\moc_visionplugin.obj ..\build\rf-ssl\objd\moc_plugin_publishgeometry.obj ..\build\rf-ssl\objd\moc_plugin_dvr.obj
+	-$(DEL_FILE) ..\build\rf-ssl\objd\moc_multistack_robocup_ssl.obj ..\build\rf-ssl\objd\moc_capture_generator.obj ..\build\rf-ssl\objd\moc_capturefromfile.obj ..\build\rf-ssl\objd\moc_cmpattern_teamdetector.obj ..\build\rf-ssl\objd\moc_cmpattern_team.obj ..\build\rf-ssl\objd\moc_lut3d.obj ..\build\rf-ssl\objd\moc_field.obj ..\build\rf-ssl\objd\moc_VarNotifier.obj ..\build\rf-ssl\objd\moc_VarTreeView.obj ..\build\rf-ssl\objd\moc_VarTreeModel.obj ..\build\rf-ssl\objd\moc_VarItemDelegate.obj ..\build\rf-ssl\objd\moc_VarItem.obj ..\build\rf-ssl\objd\moc_VarType.obj ..\build\rf-ssl\objd\moc_VarTrigger.obj ..\build\rf-ssl\objd\moc_VarStringEnum.obj ..\build\rf-ssl\objd\moc_VarString.obj ..\build\rf-ssl\objd\moc_VarSelection.obj ..\build\rf-ssl\objd\moc_VarQWidget.obj ..\build\rf-ssl\objd\moc_VarList.obj ..\build\rf-ssl\objd\moc_VarInt.obj ..\build\rf-ssl\objd\moc_VarExternal.obj ..\build\rf-ssl\objd\moc_VarDouble.obj ..\build\rf-ssl\objd\moc_VarBool.obj ..\build\rf-ssl\objd\moc_VarBlob.obj ..\build\rf-ssl\objd\moc_camerasettings.obj ..\build\rf-ssl\objd\moc_camerasettingswidget.obj debug\rf-vision_pch.obj
 	-$(DEL_FILE) debug\rf-vision_pch.pch ..\rf_bind\rf-vision.exp ..\rf_bind\rf-vision.ilk ..\rf_bind\rf-vision.idb ..\rf_bind\rf-vision.exe.embed.manifest ..\rf_bind\rf-vision.exe_manifest.rc ..\rf_bind\rf-vision.exe_manifest.res
 
 distclean: clean 
@@ -1034,9 +1044,9 @@ compiler_rcc_clean:
 		..\rf-common\vartypes\gui\icons\external.png
 	C:\Feast\Qt\5.4\msvc2012_opengl\bin\rcc.exe -name icons ..\rf-common\vartypes\gui\icons\icons.qrc -o ..\build\rf-ssl\resources\qrc_icons.cpp
 
-compiler_moc_header_make_all: ..\build\rf-ssl\moc\moc_capture_thread.cpp ..\build\rf-ssl\moc\moc_videowidget.cpp ..\build\rf-ssl\moc\moc_mainwindow.cpp ..\build\rf-ssl\moc\moc_lutwidget.cpp ..\build\rf-ssl\moc\moc_jog_dial.cpp ..\build\rf-ssl\moc\moc_glwidget.cpp ..\build\rf-ssl\moc\moc_glLUTwidget.cpp ..\build\rf-ssl\moc\moc_cameracalibwidget.cpp ..\build\rf-ssl\moc\moc_visionplugin.cpp ..\build\rf-ssl\moc\moc_plugin_publishgeometry.cpp ..\build\rf-ssl\moc\moc_plugin_dvr.cpp ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp ..\build\rf-ssl\moc\moc_capture_generator.cpp ..\build\rf-ssl\moc\moc_capturefromfile.cpp ..\build\rf-ssl\moc\moc_cmpattern_teamdetector.cpp ..\build\rf-ssl\moc\moc_cmpattern_team.cpp ..\build\rf-ssl\moc\moc_lut3d.cpp ..\build\rf-ssl\moc\moc_field.cpp ..\build\rf-ssl\moc\moc_VarNotifier.cpp ..\build\rf-ssl\moc\moc_VarTreeView.cpp ..\build\rf-ssl\moc\moc_VarTreeModel.cpp ..\build\rf-ssl\moc\moc_VarItemDelegate.cpp ..\build\rf-ssl\moc\moc_VarItem.cpp ..\build\rf-ssl\moc\moc_VarType.cpp ..\build\rf-ssl\moc\moc_VarTrigger.cpp ..\build\rf-ssl\moc\moc_VarStringEnum.cpp ..\build\rf-ssl\moc\moc_VarString.cpp ..\build\rf-ssl\moc\moc_VarSelection.cpp ..\build\rf-ssl\moc\moc_VarQWidget.cpp ..\build\rf-ssl\moc\moc_VarList.cpp ..\build\rf-ssl\moc\moc_VarInt.cpp ..\build\rf-ssl\moc\moc_VarExternal.cpp ..\build\rf-ssl\moc\moc_VarDouble.cpp ..\build\rf-ssl\moc\moc_VarBool.cpp ..\build\rf-ssl\moc\moc_VarBlob.cpp ..\build\rf-ssl\moc\moc_camerasettings.cpp
+compiler_moc_header_make_all: ..\build\rf-ssl\moc\moc_capture_thread.cpp ..\build\rf-ssl\moc\moc_videowidget.cpp ..\build\rf-ssl\moc\moc_mainwindow.cpp ..\build\rf-ssl\moc\moc_lutwidget.cpp ..\build\rf-ssl\moc\moc_jog_dial.cpp ..\build\rf-ssl\moc\moc_glwidget.cpp ..\build\rf-ssl\moc\moc_glLUTwidget.cpp ..\build\rf-ssl\moc\moc_cameracalibwidget.cpp ..\build\rf-ssl\moc\moc_visionplugin.cpp ..\build\rf-ssl\moc\moc_plugin_publishgeometry.cpp ..\build\rf-ssl\moc\moc_plugin_dvr.cpp ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp ..\build\rf-ssl\moc\moc_capture_generator.cpp ..\build\rf-ssl\moc\moc_capturefromfile.cpp ..\build\rf-ssl\moc\moc_cmpattern_teamdetector.cpp ..\build\rf-ssl\moc\moc_cmpattern_team.cpp ..\build\rf-ssl\moc\moc_lut3d.cpp ..\build\rf-ssl\moc\moc_field.cpp ..\build\rf-ssl\moc\moc_VarNotifier.cpp ..\build\rf-ssl\moc\moc_VarTreeView.cpp ..\build\rf-ssl\moc\moc_VarTreeModel.cpp ..\build\rf-ssl\moc\moc_VarItemDelegate.cpp ..\build\rf-ssl\moc\moc_VarItem.cpp ..\build\rf-ssl\moc\moc_VarType.cpp ..\build\rf-ssl\moc\moc_VarTrigger.cpp ..\build\rf-ssl\moc\moc_VarStringEnum.cpp ..\build\rf-ssl\moc\moc_VarString.cpp ..\build\rf-ssl\moc\moc_VarSelection.cpp ..\build\rf-ssl\moc\moc_VarQWidget.cpp ..\build\rf-ssl\moc\moc_VarList.cpp ..\build\rf-ssl\moc\moc_VarInt.cpp ..\build\rf-ssl\moc\moc_VarExternal.cpp ..\build\rf-ssl\moc\moc_VarDouble.cpp ..\build\rf-ssl\moc\moc_VarBool.cpp ..\build\rf-ssl\moc\moc_VarBlob.cpp ..\build\rf-ssl\moc\moc_camerasettings.cpp ..\build\rf-ssl\moc\moc_camerasettingswidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) ..\build\rf-ssl\moc\moc_capture_thread.cpp ..\build\rf-ssl\moc\moc_videowidget.cpp ..\build\rf-ssl\moc\moc_mainwindow.cpp ..\build\rf-ssl\moc\moc_lutwidget.cpp ..\build\rf-ssl\moc\moc_jog_dial.cpp ..\build\rf-ssl\moc\moc_glwidget.cpp ..\build\rf-ssl\moc\moc_glLUTwidget.cpp ..\build\rf-ssl\moc\moc_cameracalibwidget.cpp ..\build\rf-ssl\moc\moc_visionplugin.cpp ..\build\rf-ssl\moc\moc_plugin_publishgeometry.cpp ..\build\rf-ssl\moc\moc_plugin_dvr.cpp ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp ..\build\rf-ssl\moc\moc_capture_generator.cpp ..\build\rf-ssl\moc\moc_capturefromfile.cpp ..\build\rf-ssl\moc\moc_cmpattern_teamdetector.cpp ..\build\rf-ssl\moc\moc_cmpattern_team.cpp ..\build\rf-ssl\moc\moc_lut3d.cpp ..\build\rf-ssl\moc\moc_field.cpp ..\build\rf-ssl\moc\moc_VarNotifier.cpp ..\build\rf-ssl\moc\moc_VarTreeView.cpp ..\build\rf-ssl\moc\moc_VarTreeModel.cpp ..\build\rf-ssl\moc\moc_VarItemDelegate.cpp ..\build\rf-ssl\moc\moc_VarItem.cpp ..\build\rf-ssl\moc\moc_VarType.cpp ..\build\rf-ssl\moc\moc_VarTrigger.cpp ..\build\rf-ssl\moc\moc_VarStringEnum.cpp ..\build\rf-ssl\moc\moc_VarString.cpp ..\build\rf-ssl\moc\moc_VarSelection.cpp ..\build\rf-ssl\moc\moc_VarQWidget.cpp ..\build\rf-ssl\moc\moc_VarList.cpp ..\build\rf-ssl\moc\moc_VarInt.cpp ..\build\rf-ssl\moc\moc_VarExternal.cpp ..\build\rf-ssl\moc\moc_VarDouble.cpp ..\build\rf-ssl\moc\moc_VarBool.cpp ..\build\rf-ssl\moc\moc_VarBlob.cpp ..\build\rf-ssl\moc\moc_camerasettings.cpp
+	-$(DEL_FILE) ..\build\rf-ssl\moc\moc_capture_thread.cpp ..\build\rf-ssl\moc\moc_videowidget.cpp ..\build\rf-ssl\moc\moc_mainwindow.cpp ..\build\rf-ssl\moc\moc_lutwidget.cpp ..\build\rf-ssl\moc\moc_jog_dial.cpp ..\build\rf-ssl\moc\moc_glwidget.cpp ..\build\rf-ssl\moc\moc_glLUTwidget.cpp ..\build\rf-ssl\moc\moc_cameracalibwidget.cpp ..\build\rf-ssl\moc\moc_visionplugin.cpp ..\build\rf-ssl\moc\moc_plugin_publishgeometry.cpp ..\build\rf-ssl\moc\moc_plugin_dvr.cpp ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp ..\build\rf-ssl\moc\moc_capture_generator.cpp ..\build\rf-ssl\moc\moc_capturefromfile.cpp ..\build\rf-ssl\moc\moc_cmpattern_teamdetector.cpp ..\build\rf-ssl\moc\moc_cmpattern_team.cpp ..\build\rf-ssl\moc\moc_lut3d.cpp ..\build\rf-ssl\moc\moc_field.cpp ..\build\rf-ssl\moc\moc_VarNotifier.cpp ..\build\rf-ssl\moc\moc_VarTreeView.cpp ..\build\rf-ssl\moc\moc_VarTreeModel.cpp ..\build\rf-ssl\moc\moc_VarItemDelegate.cpp ..\build\rf-ssl\moc\moc_VarItem.cpp ..\build\rf-ssl\moc\moc_VarType.cpp ..\build\rf-ssl\moc\moc_VarTrigger.cpp ..\build\rf-ssl\moc\moc_VarStringEnum.cpp ..\build\rf-ssl\moc\moc_VarString.cpp ..\build\rf-ssl\moc\moc_VarSelection.cpp ..\build\rf-ssl\moc\moc_VarQWidget.cpp ..\build\rf-ssl\moc\moc_VarList.cpp ..\build\rf-ssl\moc\moc_VarInt.cpp ..\build\rf-ssl\moc\moc_VarExternal.cpp ..\build\rf-ssl\moc\moc_VarDouble.cpp ..\build\rf-ssl\moc\moc_VarBool.cpp ..\build\rf-ssl\moc\moc_VarBlob.cpp ..\build\rf-ssl\moc\moc_camerasettings.cpp ..\build\rf-ssl\moc\moc_camerasettingswidget.cpp
 ..\build\rf-ssl\moc\moc_capture_thread.cpp: ..\rf-common\capture\capturefromfile.h \
 		..\rf-common\capture\captureinterface.h \
 		..\rf-common\util\rawimage.h \
@@ -2106,6 +2116,9 @@ compiler_moc_header_clean:
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QString \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
@@ -5426,6 +5439,9 @@ compiler_moc_header_clean:
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-ssl\stacks\multistack_robocup_ssl.h
 	C:\Feast\Qt\5.4\msvc2012_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Feast/Qt/5.4/msvc2012_opengl/mkspecs/win32-msvc2012 -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/inc -IC:/Feast/OpenCV/opencv/build/include -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/plugins -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/stacks -IC:/Feast/ProgrCpp/RF-Vision/rf-common/capture -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmpattern -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmvision -IC:/Feast/ProgrCpp/RF-Vision/rf-common/gl -IC:/Feast/ProgrCpp/RF-Vision/rf-common/net -IC:/Feast/ProgrCpp/RF-Vision/rf-common/proto/cpp -IC:/Feast/ProgrCpp/RF-Vision/rf-common/util -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/primitives -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/xml -IC:/Feast/Qt/5.4/msvc2012_opengl/include -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtOpenGL -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtWidgets -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtGui -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtCore -I. ..\rf-ssl\stacks\multistack_robocup_ssl.h -o ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp
 
@@ -9397,6 +9413,271 @@ compiler_moc_header_clean:
 		..\rf-ssl\gui\camerasettings.h
 	C:\Feast\Qt\5.4\msvc2012_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Feast/Qt/5.4/msvc2012_opengl/mkspecs/win32-msvc2012 -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/inc -IC:/Feast/OpenCV/opencv/build/include -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/plugins -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/stacks -IC:/Feast/ProgrCpp/RF-Vision/rf-common/capture -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmpattern -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmvision -IC:/Feast/ProgrCpp/RF-Vision/rf-common/gl -IC:/Feast/ProgrCpp/RF-Vision/rf-common/net -IC:/Feast/ProgrCpp/RF-Vision/rf-common/proto/cpp -IC:/Feast/ProgrCpp/RF-Vision/rf-common/util -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/primitives -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/xml -IC:/Feast/Qt/5.4/msvc2012_opengl/include -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtOpenGL -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtWidgets -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtGui -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtCore -I. ..\rf-ssl\gui\camerasettings.h -o ..\build\rf-ssl\moc\moc_camerasettings.cpp
 
+..\build\rf-ssl\moc\moc_camerasettingswidget.cpp: ..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qconfig.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfeatures.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsystemdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qprocessordetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcompilerdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypeinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypetraits.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsysinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlogging.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qflags.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbasicatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qgenericatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_msvc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv7.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv6.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv5.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_ia64.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_mips.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_x86.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_cxx11.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_gcc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_unix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobalstatic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmutex.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnumeric.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qchar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrefcount.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qarraydata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearraylist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qscopedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmetatype.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvarlengtharray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontainerfwd.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qisenum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmargins.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpaintdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrect.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsize.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpalette.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcolor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qrgb.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qbrush.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qmatrix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpolygon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qregion.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qline.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtransform.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainterpath.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qimage.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixelformat.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfont.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontmetrics.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsizepolicy.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qkeysequence.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurlquery.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfile.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfiledevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvector2d.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtouchdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSlider \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvalidator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qicon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\rf-common\util\camera_calibration.h \
+		..\rf-common\vartypes\primitives\VarDouble.h \
+		..\rf-common\vartypes\primitives\VarType.h \
+		..\inc\stdint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainter.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpen.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextformat.h \
+		..\rf-common\vartypes\primitives\VarVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QObject \
+		..\rf-common\vartypes\xml\xmlParser.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
+		..\rf-common\vartypes\primitives\VarDoubleVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QDoubleSpinBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qspinbox.h \
+		..\rf-common\vartypes\primitives\VarList.h \
+		..\rf-common\util\quaternion.h \
+		..\rf-common\util\gvector.h \
+		..\rf-common\util\util.h \
+		..\inc\Eigen\Core \
+		..\inc\Eigen\src\Core\util\DisableMSVCWarnings.h \
+		..\inc\Eigen\src\Core\util\Macros.h \
+		..\inc\Eigen\src\Core\util\Constants.h \
+		..\inc\Eigen\src\Core\util\ForwardDeclarations.h \
+		..\inc\Eigen\src\Core\util\Meta.h \
+		..\inc\Eigen\src\Core\util\XprHelper.h \
+		..\inc\Eigen\src\Core\util\StaticAssert.h \
+		..\inc\Eigen\src\Core\util\Memory.h \
+		..\inc\Eigen\src\Core\NumTraits.h \
+		..\inc\Eigen\src\Core\MathFunctions.h \
+		..\inc\Eigen\src\Core\GenericPacketMath.h \
+		..\inc\Eigen\src\Core\arch\SSE\PacketMath.h \
+		..\inc\Eigen\src\Core\arch\AltiVec\PacketMath.h \
+		..\inc\Eigen\src\Core\Functors.h \
+		..\inc\Eigen\src\Core\MatrixBase.h \
+		..\inc\Eigen\src\Core\Coeffs.h \
+		..\inc\Eigen\src\Core\Assign.h \
+		..\inc\Eigen\src\Core\MatrixStorage.h \
+		..\inc\Eigen\src\Core\NestByValue.h \
+		..\inc\Eigen\src\Core\Flagged.h \
+		..\inc\Eigen\src\Core\Matrix.h \
+		..\inc\Eigen\src\Core\Cwise.h \
+		..\inc\Eigen\src\Core\CwiseBinaryOp.h \
+		..\inc\Eigen\src\Core\CwiseUnaryOp.h \
+		..\inc\Eigen\src\Core\CwiseNullaryOp.h \
+		..\inc\Eigen\src\Core\Dot.h \
+		..\inc\Eigen\src\Core\Product.h \
+		..\inc\Eigen\src\Core\DiagonalProduct.h \
+		..\inc\Eigen\src\Core\SolveTriangular.h \
+		..\inc\Eigen\src\Core\MapBase.h \
+		..\inc\Eigen\src\Core\Map.h \
+		..\inc\Eigen\src\Core\Block.h \
+		..\inc\Eigen\src\Core\Minor.h \
+		..\inc\Eigen\src\Core\Transpose.h \
+		..\inc\Eigen\src\Core\DiagonalMatrix.h \
+		..\inc\Eigen\src\Core\DiagonalCoeffs.h \
+		..\inc\Eigen\src\Core\Sum.h \
+		..\inc\Eigen\src\Core\Redux.h \
+		..\inc\Eigen\src\Core\Visitor.h \
+		..\inc\Eigen\src\Core\Fuzzy.h \
+		..\inc\Eigen\src\Core\IO.h \
+		..\inc\Eigen\src\Core\Swap.h \
+		..\inc\Eigen\src\Core\CommaInitializer.h \
+		..\inc\Eigen\src\Core\Part.h \
+		..\inc\Eigen\src\Core\CacheFriendlyProduct.h \
+		..\inc\Eigen\src\Core\util\EnableMSVCWarnings.h \
+		..\rf-common\util\field.h \
+		..\rf-common\util\field_default_constants.h \
+		..\rf-common\vartypes\VarTypes.h \
+		..\rf-common\vartypes\VarTypesInstance.h \
+		..\rf-common\vartypes\VarTypesFactory.h \
+		..\rf-common\vartypes\primitives\VarString.h \
+		..\rf-common\vartypes\primitives\VarStringVal.h \
+		..\rf-common\vartypes\primitives\VarInt.h \
+		..\rf-common\vartypes\primitives\VarIntVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpinBox \
+		..\rf-common\vartypes\primitives\VarBool.h \
+		..\rf-common\vartypes\primitives\VarBoolVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QCheckBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcheckbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractbutton.h \
+		..\rf-common\vartypes\primitives\VarBlob.h \
+		..\rf-common\vartypes\VarBase64.h \
+		..\rf-common\vartypes\primitives\VarStringEnum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
+		..\rf-common\vartypes\primitives\VarSelection.h \
+		..\rf-common\vartypes\primitives\VarExternal.h \
+		..\rf-common\vartypes\primitives\VarQWidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
+		..\rf-common\vartypes\primitives\VarTrigger.h \
+		..\rf-common\vartypes\primitives\VarProtoBuffer.h \
+		..\rf-common\vartypes\primitives\VarProtoBufferVal.h \
+		..\inc\google\protobuf\message.h \
+		..\inc\google\protobuf\message_lite.h \
+		..\inc\google\protobuf\stubs\common.h \
+		..\inc\google\protobuf\descriptor.h \
+		..\rf-common\vartypes\enhanced\TimeLine.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QList \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QListIterator \
+		..\rf-common\vartypes\enhanced\TimeVar.h \
+		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.h \
+		..\inc\google\protobuf\generated_message_util.h \
+		..\inc\google\protobuf\stubs\once.h \
+		..\inc\google\protobuf\stubs\atomicops.h \
+		..\inc\google\protobuf\stubs\platform_macros.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_tsan.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_msvc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_solaris.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_macosx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm64_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_qnx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_mips_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_pnacl.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_generic_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_atomicword_compat.h \
+		..\inc\google\protobuf\repeated_field.h \
+		..\inc\google\protobuf\stubs\type_traits.h \
+		..\inc\google\protobuf\stubs\template_util.h \
+		..\inc\google\protobuf\extension_set.h \
+		..\inc\google\protobuf\unknown_field_set.h \
+		..\rf-common\util\timer.h \
+		..\rf-ssl\gui\camerasettingswidget.h
+	C:\Feast\Qt\5.4\msvc2012_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Feast/Qt/5.4/msvc2012_opengl/mkspecs/win32-msvc2012 -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/inc -IC:/Feast/OpenCV/opencv/build/include -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/plugins -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/stacks -IC:/Feast/ProgrCpp/RF-Vision/rf-common/capture -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmpattern -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmvision -IC:/Feast/ProgrCpp/RF-Vision/rf-common/gl -IC:/Feast/ProgrCpp/RF-Vision/rf-common/net -IC:/Feast/ProgrCpp/RF-Vision/rf-common/proto/cpp -IC:/Feast/ProgrCpp/RF-Vision/rf-common/util -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/primitives -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/xml -IC:/Feast/Qt/5.4/msvc2012_opengl/include -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtOpenGL -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtWidgets -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtGui -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtCore -I. ..\rf-ssl\gui\camerasettingswidget.h -o ..\build\rf-ssl\moc\moc_camerasettingswidget.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
 compiler_uic_make_all: ..\build\rf-ssl\ui\ui_videowidget.h ..\build\rf-ssl\ui\ui_mainwindow.h
@@ -10595,6 +10876,9 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMap \
@@ -11752,6 +12036,9 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QString \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
@@ -18119,6 +18406,9 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\multivisionstack.obj: ..\rf-ssl\stacks\multivisionstack.cpp ..\rf-ssl\stacks\multivisionstack.h \
@@ -19057,6 +19347,9 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\captureinterface.obj: ..\rf-common\capture\captureinterface.cpp ..\rf-common\capture\captureinterface.h \
@@ -26547,6 +26840,550 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QDebug \
 		debug\rf-vision_pch.obj
 
+..\build\rf-ssl\objd\plugin_camerasettings.obj: ..\rf-ssl\plugins\plugin_camerasettings.cpp ..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qconfig.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfeatures.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsystemdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qprocessordetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcompilerdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypeinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypetraits.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsysinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlogging.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qflags.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbasicatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qgenericatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_msvc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv7.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv6.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv5.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_ia64.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_mips.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_x86.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_cxx11.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_gcc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_unix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobalstatic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmutex.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnumeric.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qchar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrefcount.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qarraydata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearraylist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qscopedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmetatype.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvarlengtharray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontainerfwd.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qisenum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmargins.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpaintdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrect.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsize.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpalette.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcolor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qrgb.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qbrush.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qmatrix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpolygon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qregion.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qline.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtransform.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainterpath.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qimage.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixelformat.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfont.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontmetrics.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsizepolicy.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qkeysequence.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurlquery.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfile.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfiledevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvector2d.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtouchdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSlider \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\rf-ssl\framedata.h \
+		..\rf-common\util\ringbuffer.h \
+		..\rf-common\util\rawimage.h \
+		..\rf-common\util\image_interface.h \
+		..\rf-common\util\colors.h \
+		..\inc\stdint.h \
+		..\rf-common\vartypes\VarTypes.h \
+		..\rf-common\vartypes\VarTypesInstance.h \
+		..\rf-common\vartypes\VarTypesFactory.h \
+		..\rf-common\vartypes\primitives\VarType.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainter.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpen.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvalidator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qicon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextformat.h \
+		..\rf-common\vartypes\primitives\VarVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QObject \
+		..\rf-common\vartypes\xml\xmlParser.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
+		..\rf-common\vartypes\primitives\VarString.h \
+		..\rf-common\vartypes\primitives\VarStringVal.h \
+		..\rf-common\vartypes\primitives\VarInt.h \
+		..\rf-common\vartypes\primitives\VarIntVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpinBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qspinbox.h \
+		..\rf-common\vartypes\primitives\VarBool.h \
+		..\rf-common\vartypes\primitives\VarBoolVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QCheckBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcheckbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractbutton.h \
+		..\rf-common\vartypes\primitives\VarDouble.h \
+		..\rf-common\vartypes\primitives\VarDoubleVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QDoubleSpinBox \
+		..\rf-common\vartypes\primitives\VarBlob.h \
+		..\rf-common\vartypes\VarBase64.h \
+		..\rf-common\vartypes\primitives\VarList.h \
+		..\rf-common\vartypes\primitives\VarStringEnum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\rf-common\vartypes\primitives\VarSelection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qitemselectionmodel.h \
+		..\rf-common\vartypes\primitives\VarExternal.h \
+		..\rf-common\vartypes\primitives\VarQWidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
+		..\rf-common\vartypes\primitives\VarTrigger.h \
+		..\rf-common\vartypes\primitives\VarProtoBuffer.h \
+		..\rf-common\vartypes\primitives\VarProtoBufferVal.h \
+		..\inc\google\protobuf\message.h \
+		..\inc\google\protobuf\message_lite.h \
+		..\inc\google\protobuf\stubs\common.h \
+		..\inc\google\protobuf\descriptor.h \
+		..\rf-common\vartypes\enhanced\TimeLine.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QList \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QListIterator \
+		..\rf-common\vartypes\enhanced\TimeVar.h \
+		..\rf-ssl\plugins\visionplugin.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QMouseEvent \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QKeyEvent \
+		..\rf-ssl\gui\realtimedisplaywidget.h \
+		..\rf-ssl\videostats.h \
+		..\rf-ssl\capturestats.h \
+		..\rf-ssl\gui\renderoptions.h \
+		..\rf-common\util\pixelloc.h \
+		..\rf-common\util\camera_calibration.h \
+		..\rf-common\util\quaternion.h \
+		..\rf-common\util\gvector.h \
+		..\rf-common\util\util.h \
+		..\inc\Eigen\Core \
+		..\inc\Eigen\src\Core\util\DisableMSVCWarnings.h \
+		..\inc\Eigen\src\Core\util\Macros.h \
+		..\inc\Eigen\src\Core\util\Constants.h \
+		..\inc\Eigen\src\Core\util\ForwardDeclarations.h \
+		..\inc\Eigen\src\Core\util\Meta.h \
+		..\inc\Eigen\src\Core\util\XprHelper.h \
+		..\inc\Eigen\src\Core\util\StaticAssert.h \
+		..\inc\Eigen\src\Core\util\Memory.h \
+		..\inc\Eigen\src\Core\NumTraits.h \
+		..\inc\Eigen\src\Core\MathFunctions.h \
+		..\inc\Eigen\src\Core\GenericPacketMath.h \
+		..\inc\Eigen\src\Core\arch\SSE\PacketMath.h \
+		..\inc\Eigen\src\Core\arch\AltiVec\PacketMath.h \
+		..\inc\Eigen\src\Core\Functors.h \
+		..\inc\Eigen\src\Core\MatrixBase.h \
+		..\inc\Eigen\src\Core\Coeffs.h \
+		..\inc\Eigen\src\Core\Assign.h \
+		..\inc\Eigen\src\Core\MatrixStorage.h \
+		..\inc\Eigen\src\Core\NestByValue.h \
+		..\inc\Eigen\src\Core\Flagged.h \
+		..\inc\Eigen\src\Core\Matrix.h \
+		..\inc\Eigen\src\Core\Cwise.h \
+		..\inc\Eigen\src\Core\CwiseBinaryOp.h \
+		..\inc\Eigen\src\Core\CwiseUnaryOp.h \
+		..\inc\Eigen\src\Core\CwiseNullaryOp.h \
+		..\inc\Eigen\src\Core\Dot.h \
+		..\inc\Eigen\src\Core\Product.h \
+		..\inc\Eigen\src\Core\DiagonalProduct.h \
+		..\inc\Eigen\src\Core\SolveTriangular.h \
+		..\inc\Eigen\src\Core\MapBase.h \
+		..\inc\Eigen\src\Core\Map.h \
+		..\inc\Eigen\src\Core\Block.h \
+		..\inc\Eigen\src\Core\Minor.h \
+		..\inc\Eigen\src\Core\Transpose.h \
+		..\inc\Eigen\src\Core\DiagonalMatrix.h \
+		..\inc\Eigen\src\Core\DiagonalCoeffs.h \
+		..\inc\Eigen\src\Core\Sum.h \
+		..\inc\Eigen\src\Core\Redux.h \
+		..\inc\Eigen\src\Core\Visitor.h \
+		..\inc\Eigen\src\Core\Fuzzy.h \
+		..\inc\Eigen\src\Core\IO.h \
+		..\inc\Eigen\src\Core\Swap.h \
+		..\inc\Eigen\src\Core\CommaInitializer.h \
+		..\inc\Eigen\src\Core\Part.h \
+		..\inc\Eigen\src\Core\CacheFriendlyProduct.h \
+		..\inc\Eigen\src\Core\util\EnableMSVCWarnings.h \
+		..\rf-common\util\field.h \
+		..\rf-common\util\field_default_constants.h \
+		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.h \
+		..\inc\google\protobuf\generated_message_util.h \
+		..\inc\google\protobuf\stubs\once.h \
+		..\inc\google\protobuf\stubs\atomicops.h \
+		..\inc\google\protobuf\stubs\platform_macros.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_tsan.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_msvc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_solaris.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_macosx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm64_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_qnx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_mips_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_pnacl.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_generic_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_atomicword_compat.h \
+		..\inc\google\protobuf\repeated_field.h \
+		..\inc\google\protobuf\stubs\type_traits.h \
+		..\inc\google\protobuf\stubs\template_util.h \
+		..\inc\google\protobuf\extension_set.h \
+		..\inc\google\protobuf\unknown_field_set.h \
+		..\rf-common\util\timer.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
+		debug\rf-vision_pch.obj
+
+..\build\rf-ssl\objd\camerasettingswidget.obj: ..\rf-ssl\gui\camerasettingswidget.cpp ..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qconfig.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfeatures.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsystemdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qprocessordetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcompilerdetection.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypeinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtypetraits.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsysinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlogging.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qflags.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbasicatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qgenericatomic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_msvc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv7.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv6.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_armv5.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_ia64.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_mips.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_x86.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_cxx11.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_gcc.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qatomic_unix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobalstatic.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmutex.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnumeric.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qchar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrefcount.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qarraydata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearraylist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qscopedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmetatype.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvarlengtharray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontainerfwd.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qisenum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmargins.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpaintdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrect.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsize.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpalette.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcolor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qrgb.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qbrush.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qmatrix.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpolygon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qregion.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qline.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtransform.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainterpath.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qimage.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixelformat.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfont.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontmetrics.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontinfo.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsizepolicy.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qkeysequence.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qevent.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurlquery.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfile.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfiledevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvector2d.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtouchdevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSlider \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvalidator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qicon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\rf-common\util\camera_calibration.h \
+		..\rf-common\vartypes\primitives\VarDouble.h \
+		..\rf-common\vartypes\primitives\VarType.h \
+		..\inc\stdint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpainter.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpen.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextcursor.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtextformat.h \
+		..\rf-common\vartypes\primitives\VarVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QObject \
+		..\rf-common\vartypes\xml\xmlParser.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
+		..\rf-common\vartypes\primitives\VarDoubleVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QDoubleSpinBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qspinbox.h \
+		..\rf-common\vartypes\primitives\VarList.h \
+		..\rf-common\util\quaternion.h \
+		..\rf-common\util\gvector.h \
+		..\rf-common\util\util.h \
+		..\inc\Eigen\Core \
+		..\inc\Eigen\src\Core\util\DisableMSVCWarnings.h \
+		..\inc\Eigen\src\Core\util\Macros.h \
+		..\inc\Eigen\src\Core\util\Constants.h \
+		..\inc\Eigen\src\Core\util\ForwardDeclarations.h \
+		..\inc\Eigen\src\Core\util\Meta.h \
+		..\inc\Eigen\src\Core\util\XprHelper.h \
+		..\inc\Eigen\src\Core\util\StaticAssert.h \
+		..\inc\Eigen\src\Core\util\Memory.h \
+		..\inc\Eigen\src\Core\NumTraits.h \
+		..\inc\Eigen\src\Core\MathFunctions.h \
+		..\inc\Eigen\src\Core\GenericPacketMath.h \
+		..\inc\Eigen\src\Core\arch\SSE\PacketMath.h \
+		..\inc\Eigen\src\Core\arch\AltiVec\PacketMath.h \
+		..\inc\Eigen\src\Core\Functors.h \
+		..\inc\Eigen\src\Core\MatrixBase.h \
+		..\inc\Eigen\src\Core\Coeffs.h \
+		..\inc\Eigen\src\Core\Assign.h \
+		..\inc\Eigen\src\Core\MatrixStorage.h \
+		..\inc\Eigen\src\Core\NestByValue.h \
+		..\inc\Eigen\src\Core\Flagged.h \
+		..\inc\Eigen\src\Core\Matrix.h \
+		..\inc\Eigen\src\Core\Cwise.h \
+		..\inc\Eigen\src\Core\CwiseBinaryOp.h \
+		..\inc\Eigen\src\Core\CwiseUnaryOp.h \
+		..\inc\Eigen\src\Core\CwiseNullaryOp.h \
+		..\inc\Eigen\src\Core\Dot.h \
+		..\inc\Eigen\src\Core\Product.h \
+		..\inc\Eigen\src\Core\DiagonalProduct.h \
+		..\inc\Eigen\src\Core\SolveTriangular.h \
+		..\inc\Eigen\src\Core\MapBase.h \
+		..\inc\Eigen\src\Core\Map.h \
+		..\inc\Eigen\src\Core\Block.h \
+		..\inc\Eigen\src\Core\Minor.h \
+		..\inc\Eigen\src\Core\Transpose.h \
+		..\inc\Eigen\src\Core\DiagonalMatrix.h \
+		..\inc\Eigen\src\Core\DiagonalCoeffs.h \
+		..\inc\Eigen\src\Core\Sum.h \
+		..\inc\Eigen\src\Core\Redux.h \
+		..\inc\Eigen\src\Core\Visitor.h \
+		..\inc\Eigen\src\Core\Fuzzy.h \
+		..\inc\Eigen\src\Core\IO.h \
+		..\inc\Eigen\src\Core\Swap.h \
+		..\inc\Eigen\src\Core\CommaInitializer.h \
+		..\inc\Eigen\src\Core\Part.h \
+		..\inc\Eigen\src\Core\CacheFriendlyProduct.h \
+		..\inc\Eigen\src\Core\util\EnableMSVCWarnings.h \
+		..\rf-common\util\field.h \
+		..\rf-common\util\field_default_constants.h \
+		..\rf-common\vartypes\VarTypes.h \
+		..\rf-common\vartypes\VarTypesInstance.h \
+		..\rf-common\vartypes\VarTypesFactory.h \
+		..\rf-common\vartypes\primitives\VarString.h \
+		..\rf-common\vartypes\primitives\VarStringVal.h \
+		..\rf-common\vartypes\primitives\VarInt.h \
+		..\rf-common\vartypes\primitives\VarIntVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpinBox \
+		..\rf-common\vartypes\primitives\VarBool.h \
+		..\rf-common\vartypes\primitives\VarBoolVal.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QCheckBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcheckbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractbutton.h \
+		..\rf-common\vartypes\primitives\VarBlob.h \
+		..\rf-common\vartypes\VarBase64.h \
+		..\rf-common\vartypes\primitives\VarStringEnum.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
+		..\rf-common\vartypes\primitives\VarSelection.h \
+		..\rf-common\vartypes\primitives\VarExternal.h \
+		..\rf-common\vartypes\primitives\VarQWidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
+		..\rf-common\vartypes\primitives\VarTrigger.h \
+		..\rf-common\vartypes\primitives\VarProtoBuffer.h \
+		..\rf-common\vartypes\primitives\VarProtoBufferVal.h \
+		..\inc\google\protobuf\message.h \
+		..\inc\google\protobuf\message_lite.h \
+		..\inc\google\protobuf\stubs\common.h \
+		..\inc\google\protobuf\descriptor.h \
+		..\rf-common\vartypes\enhanced\TimeLine.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QList \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QListIterator \
+		..\rf-common\vartypes\enhanced\TimeVar.h \
+		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.h \
+		..\inc\google\protobuf\generated_message_util.h \
+		..\inc\google\protobuf\stubs\once.h \
+		..\inc\google\protobuf\stubs\atomicops.h \
+		..\inc\google\protobuf\stubs\platform_macros.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_tsan.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_msvc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_solaris.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_macosx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm64_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_qnx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_mips_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_pnacl.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_generic_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_atomicword_compat.h \
+		..\inc\google\protobuf\repeated_field.h \
+		..\inc\google\protobuf\stubs\type_traits.h \
+		..\inc\google\protobuf\stubs\template_util.h \
+		..\inc\google\protobuf\extension_set.h \
+		..\inc\google\protobuf\unknown_field_set.h \
+		..\rf-common\util\timer.h \
+		debug\rf-vision_pch.obj
+
 ..\build\rf-ssl\objd\qrc_icons_gui.obj: ..\build\rf-ssl\resources\qrc_icons_gui.cpp debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\qrc_icons.obj: ..\build\rf-ssl\resources\qrc_icons.cpp debug\rf-vision_pch.obj
@@ -26622,6 +27459,8 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 ..\build\rf-ssl\objd\moc_VarBlob.obj: ..\build\rf-ssl\moc\moc_VarBlob.cpp debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\moc_camerasettings.obj: ..\build\rf-ssl\moc\moc_camerasettings.cpp debug\rf-vision_pch.obj
+
+..\build\rf-ssl\objd\moc_camerasettingswidget.obj: ..\build\rf-ssl\moc\moc_camerasettingswidget.cpp debug\rf-vision_pch.obj
 
 ####### Install
 

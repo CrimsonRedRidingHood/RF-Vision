@@ -102,7 +102,9 @@ SOURCES += \
   $${SHARED_DIR}/vartypes/primitives/VarBool.cpp \
   $${SHARED_DIR}/vartypes/primitives/VarBlob.cpp \
   $${SHARED_DIR}/vartypes/xml/xmlParser.cpp \
-    gui/camerasettings.cpp
+    gui/camerasettings.cpp \
+    plugins/plugin_camerasettings.cpp \
+    gui/camerasettingswidget.cpp
 
 HEADERS += \
   videostats.h \
@@ -214,7 +216,9 @@ HEADERS += \
   $${SHARED_DIR}/vartypes/primitives/VarBool.h \
   $${SHARED_DIR}/vartypes/primitives/VarBlob.h \
   $${SHARED_DIR}/vartypes/xml/xmlParser.h \
-    gui/camerasettings.h
+    gui/camerasettings.h \
+    plugins/plugin_camerasettings.h \
+    gui/camerasettingswidget.h
 
 FORMS += \
   gui/videowidget.ui \
