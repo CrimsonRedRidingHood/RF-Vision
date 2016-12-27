@@ -96,6 +96,8 @@ public:
 
   virtual bool copyAndConvertFrame(const RawImage & src, RawImage & target);
   virtual string getCaptureMethodName() const;
+
+  virtual void loadCapturingSettings(void * params);
 };
 
 #endif

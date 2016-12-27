@@ -23,9 +23,13 @@
 #include "plugin_camerasettings.h"
 
 PluginCameraSettings::PluginCameraSettings( FrameBuffer * _buffer,
-                                            CameraParameters& camera_params
+                                            CameraParameters& camera_params,
+                                            CaptureOpenCv * openCvToAssign
                                             ) :
-    VisionPlugin(_buffer), camera_parameters(camera_params), camSettingsWidget(0)
+    VisionPlugin(_buffer),
+    camera_parameters(camera_params),
+    camSettingsWidget(0),
+    assignedOpenCvObject(openCvToAssign)
 {
     qDebug() << "PluginCameraSettings constructor called";
     settings = new VarList( "CameraSettings Settings" );
@@ -46,7 +50,9 @@ string PluginCameraSettings::getName() {
 QWidget * PluginCameraSettings::getControlWidget()
 {
     if (camSettingsWidget==0)
-      camSettingsWidget = new CameraSettingsWidget(camera_parameters);
+      camSettingsWidget = new CameraSettingsWidget(camera_parameters, assignedOpenCvObject, "camsettings.dat");
 
     return (QWidget *)camSettingsWidget;
 }
+
+

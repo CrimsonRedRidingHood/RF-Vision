@@ -75,6 +75,8 @@ public:
     /// This will make your method stop capturing data
     virtual bool     stopCapture() = 0;
 
+    virtual void     loadCapturingSettings( void * params ) = 0;
+
     /// If applicable, this will enforce a reinitialization / reset
     /// on your capturing hardware, in case something went wrong.
     ///

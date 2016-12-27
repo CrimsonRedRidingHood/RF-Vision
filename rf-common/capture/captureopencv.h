@@ -6,10 +6,12 @@
 
 #include "captureinterface.h"
 
+#include "camerasettingskeeper.h"
+
 class CaptureOpenCv : public CaptureInterface
 {
 public:
-    CaptureOpenCv(VarList * _settings=0);
+    CaptureOpenCv(CameraSettingsKeeper * camSettings, VarList * _settings=0);
     virtual ~CaptureOpenCv();
 
     virtual RawImage getFrame();
@@ -19,9 +21,16 @@ public:
     virtual bool stopCapture();
     virtual string getCaptureMethodName() const;
 
+public slots:
+    virtual void loadCapturingSettings( void * params );
+
 private:
+    void loadSettingsFromKeeper();
+
     cv::VideoCapture mCapture;
     VarList *mCaptureSettings;
     VarString *mIndex;
     QMutex mutex;
+
+    CameraSettingsKeeper * cameraSettings;
 };

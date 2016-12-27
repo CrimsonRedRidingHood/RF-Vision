@@ -20,8 +20,12 @@
 //========================================================================
 
 #include "capture_thread.h"
+#include "captureopencv.h"
+#include <qdebug.h>
 
-CaptureThread::CaptureThread(int cam_id)// : mVideoInput(vi)
+#include "plugin_camerasettings.h"
+
+CaptureThread::CaptureThread(int cam_id, CameraSettingsKeeper * camSettings)// : mVideoInput(vi)
 {
   camId=cam_id;
   //affinity=0;
@@ -59,7 +63,8 @@ CaptureThread::CaptureThread(int cam_id)// : mVideoInput(vi)
   captureFiles = new CaptureFromFile(fromfile);
   captureGenerator = new CaptureGenerator(generator);
   //captureOpenCv = new CaptureOpenCv(mVideoInput,opencv);
-  captureOpenCv = new CaptureOpenCv(opencv);
+  captureOpenCv = new CaptureOpenCv(camSettings, opencv);// captureOpenCv->mCapture.set();
+  camSettings->captureOpenCv.push_back(captureOpenCv);
   selectCaptureMethod();
   _kill =false;
   rb=0;
@@ -111,6 +116,7 @@ void CaptureThread::selectCaptureMethod() {
   } else if(captureModule->getString() == "Generator") {
     new_capture = captureGenerator;
   } else if(captureModule->getString() == "Capture from USB webcam") {
+    qDebug() << "Capture from USB webcam detected";
     new_capture = captureOpenCv;
   } else {
     new_capture = captureDC1394;
@@ -137,6 +143,7 @@ void CaptureThread::kill() {
 
 bool CaptureThread::init() {
   capture_mutex.lock();
+  //captureOpenCv->mCapture.set( CAP_PROP_HUE, 0.5 );
   bool res = capture->startCapture();
   if (res==true) {
     c_start->addFlags( VARTYPE_FLAG_READONLY );
@@ -227,6 +234,7 @@ void CaptureThread::run() {
           if ((capture != 0) && (capture->isCapturing())) {
             capture->releaseFrame();
           }
+          pic_raw.clear();
           capture_mutex.unlock();
 
         } else {

@@ -104,7 +104,8 @@ SOURCES += \
   $${SHARED_DIR}/vartypes/xml/xmlParser.cpp \
     gui/camerasettings.cpp \
     plugins/plugin_camerasettings.cpp \
-    gui/camerasettingswidget.cpp
+    gui/camerasettingswidget.cpp \
+    plugins/camerasettingskeeper.cpp
 
 HEADERS += \
   videostats.h \
@@ -218,7 +219,8 @@ HEADERS += \
   $${SHARED_DIR}/vartypes/xml/xmlParser.h \
     gui/camerasettings.h \
     plugins/plugin_camerasettings.h \
-    gui/camerasettingswidget.h
+    gui/camerasettingswidget.h \
+    plugins/camerasettingskeeper.h
 
 FORMS += \
   gui/videowidget.ui \

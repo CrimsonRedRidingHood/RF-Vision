@@ -8,9 +8,13 @@
 
 #include <QtCore/QDebug>
 
-CaptureOpenCv::CaptureOpenCv(VarList * _settings)
+#include "plugin_camerasettings.h"
+
+CaptureOpenCv::CaptureOpenCv(CameraSettingsKeeper * camSettings, VarList * _settings)
     : CaptureInterface(_settings)
 {
+    cameraSettings = camSettings;
+
     mCaptureSettings = new VarList("Capture Settings");
     settings->addChild(mCaptureSettings);
 
@@ -20,6 +24,19 @@ CaptureOpenCv::CaptureOpenCv(VarList * _settings)
 
 CaptureOpenCv::~CaptureOpenCv()
 {
+}
+
+void CaptureOpenCv::loadSettingsFromKeeper()
+{
+    int currentId = 0;
+    double currentValue = 0.0;
+
+    cameraSettings->resetIterator();
+
+    while( cameraSettings->nextProperty( currentId, currentValue ) )
+    {
+        mCapture.set( currentId, currentValue );
+    }
 }
 
 RawImage CaptureOpenCv::getFrame()
@@ -83,13 +100,18 @@ bool CaptureOpenCv::startCapture()
     bool err = false;
     int const index = QString(indexStr.c_str()).toInt(&err);
 
-    qDebug() << "Starting capture from" << index;
+    // Set camera
 
     if (err)
         mCapture.open(index);
 
-    qDebug() << "Success: " << mCapture.isOpened();
-    return mCapture.isOpened();
+    if( mCapture.isOpened() )
+    {
+        loadSettingsFromKeeper();
+        return true;
+    }
+
+    return false;
 }
 
 bool CaptureOpenCv::stopCapture()
@@ -101,4 +123,14 @@ bool CaptureOpenCv::stopCapture()
 string CaptureOpenCv::getCaptureMethodName() const
 {
     return "OpenCV";
+}
+
+void CaptureOpenCv::loadCapturingSettings(void * params)
+{
+    int propId = *((int*)(params));
+    double propValue = *((double*)(((unsigned char*)(params))+sizeof(int)));
+    if( !mCapture.set( propId, propValue ) )
+    {
+        cameraSettings->put( propId, propValue );
+    }
 }

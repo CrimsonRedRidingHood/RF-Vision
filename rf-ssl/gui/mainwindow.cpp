@@ -47,7 +47,8 @@ MainWindow::MainWindow(bool start_capture, bool enforce_affinity)
   //opt->parse();
 
   //load RoboCup SSL stack by default:
-  multi_stack=new MultiStackRoboCupSSL(opts, 2);
+  multi_stack=new MultiStackRoboCupSSL(opts, 2, new CameraSettingsKeeper());
+  qDebug() << "MultiStack Created";
 
   VarExternal * stackvar;
   root->addChild(stackvar= new VarExternal((multi_stack->getSettingsFileName() + ".xml").c_str(),multi_stack->getName()));

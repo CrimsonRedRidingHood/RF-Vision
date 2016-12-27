@@ -23,7 +23,7 @@
 #define CAPTURE_THREAD_H
 #include "capturefromfile.h"
 #include "capture_generator.h"
-#include "captureopencv.h"
+#include "captureopencv.h" // camerasettingskeeper included here
 #include <QThread>
 #include "ringbuffer.h"
 #include "framedata.h"
@@ -86,7 +86,7 @@ public:
   VarList * getSettings();
   //void setAffinityManager(AffinityManager * _affinity);
  // CaptureThread(int cam_id, videoInput& vi);
-  CaptureThread(int cam_id);
+  CaptureThread(int cam_id, CameraSettingsKeeper * camSettings);
   ~CaptureThread();
 
   virtual void run();

@@ -33,6 +33,9 @@
 #include "camera_calibration.h"
 #include "camerasettingswidget.h"
 
+#include "captureopencv.h"
+#include "camerasettingskeeper.h"
+
 class PluginCameraSettings : public VisionPlugin
 {
 protected:
@@ -41,12 +44,16 @@ protected:
     VarList* calibration_settings;
 
     CameraSettingsWidget * camSettingsWidget;
+    //CameraSettingsKeeper * cameraSettings;
+    CaptureOpenCv * assignedOpenCvObject;
 
 public:
     CameraParameters& camera_parameters;
 
-    PluginCameraSettings( FrameBuffer * _buffer,
-                          CameraParameters& camera_params );
+    PluginCameraSettings(
+                          FrameBuffer * _buffer,
+                          CameraParameters& camera_params,
+                          CaptureOpenCv * capOpenCv );
     ~PluginCameraSettings();
 
     virtual VarList * getSettings();

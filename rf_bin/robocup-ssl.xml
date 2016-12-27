@@ -621,7 +621,7 @@
 			<Var name="OpenCV" type="list">
 				<Var name="Capture Settings" type="list">
 					<Var name="Camera index" type="string">
-						0
+						1
 					</Var>
 				</Var>
 			</Var>

@@ -191,3 +191,8 @@ string CaptureGenerator::getCaptureMethodName() const
 {
   return "Image Generator";
 }
+
+void CaptureGenerator::loadCapturingSettings(void * params)
+{
+
+}

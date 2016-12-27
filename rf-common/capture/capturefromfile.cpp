@@ -277,3 +277,8 @@ string CaptureFromFile::getCaptureMethodName() const
 {
   return "FromFile";
 }
+
+void CaptureFromFile::loadCapturingSettings(void * params)
+{
+
+}

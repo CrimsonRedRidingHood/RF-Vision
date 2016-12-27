@@ -19,8 +19,9 @@
 */
 //========================================================================
 #include "multistack_robocup_ssl.h"
+#include "captureopencv.h"
 
-MultiStackRoboCupSSL::MultiStackRoboCupSSL(RenderOptions * _opts, int cameras) : MultiVisionStack("RoboCup SSL Multi-Cam",_opts) {
+MultiStackRoboCupSSL::MultiStackRoboCupSSL(RenderOptions * _opts, int cameras, CameraSettingsKeeper * camSettings) : MultiVisionStack("RoboCup SSL Multi-Cam",_opts) {
   //add global field calibration parameter
   global_field = new RoboCupField();
   settings->addChild(global_field->getSettings());
@@ -52,11 +53,24 @@ MultiStackRoboCupSSL::MultiStackRoboCupSSL(RenderOptions * _opts, int cameras) :
   global_plugin_publish_geometry = new PluginPublishGeometry(0,udp_server,*global_field);
 
   //add parameter for number of cameras
-  createThreads(cameras);
+  createThreads(cameras, camSettings);
   unsigned int n = threads.size();
+  qDebug() << n << " threads detected";
   for (unsigned int i = 0; i < n;i++) {
     threads[i]->setFrameBuffer(new FrameBuffer(5));
-    threads[i]->setStack(new StackRoboCupSSL(_opts,threads[i]->getFrameBuffer(),i,global_field,global_ball_settings,global_plugin_publish_geometry,global_team_selector_blue, global_team_selector_yellow,udp_server,"robocup-ssl-cam-" + QString::number(i).toStdString()));
+    threads[i]->setStack(new StackRoboCupSSL(
+                             _opts,
+                             threads[i]->getFrameBuffer(),
+                             i,
+                             global_field,
+                             global_ball_settings,
+                             global_plugin_publish_geometry,
+                             global_team_selector_blue,
+                             global_team_selector_yellow,
+                             udp_server,
+                             "robocup-ssl-cam-" + QString::number(i).toStdString(),
+                             (CaptureOpenCv*)camSettings->captureOpenCv[i])
+                         );
   }
     //TODO: make LUT widgets aware of each other for easy data-sharing
 }

@@ -48,7 +48,7 @@ class MultiStackRoboCupSSL : public QObject, public MultiVisionStack {
   PluginSSLNetworkOutputSettings * global_network_output_settings;
   RoboCupSSLServer * udp_server;
   public:
-  MultiStackRoboCupSSL(RenderOptions * _opts, int cameras);
+  MultiStackRoboCupSSL(RenderOptions * _opts, int cameras, CameraSettingsKeeper * camSettings);
   virtual string getSettingsFileName();
   virtual ~MultiStackRoboCupSSL();
   public slots:

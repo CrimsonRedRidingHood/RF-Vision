@@ -44,10 +44,10 @@ string MultiVisionStack::getSettingsFileName() {
   return name;
 }
 
-void MultiVisionStack::createThreads(int number) {
+void MultiVisionStack::createThreads(int number, CameraSettingsKeeper * camSettings) {
   for (int i=0;i<number;i++) {
     //threads.push_back(new CaptureThread(i,mVideoInput));
-      threads.push_back(new CaptureThread(i));
+      threads.push_back(new CaptureThread(i, camSettings));
   }
 }
 

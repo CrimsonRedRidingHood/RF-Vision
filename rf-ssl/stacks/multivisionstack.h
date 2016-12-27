@@ -26,6 +26,8 @@
 #include <QObject>
 #include <string>
 
+#include "camerasettingskeeper.h"
+
 #include "VarTypes.h"
 #include "framedata.h"
 #include "realtimedisplaywidget.h"
@@ -45,7 +47,7 @@ public:
   RenderOptions * opts;
   VarList * settings;
 protected:
-    void createThreads(int number);
+    void createThreads(int number, CameraSettingsKeeper * camSettings);
 public:
     MultiVisionStack(string _name, RenderOptions * _opts);
     virtual ~MultiVisionStack();

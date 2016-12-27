@@ -131,7 +131,8 @@ SOURCES       = ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
 		..\rf-common\vartypes\xml\xmlParser.cpp \
 		..\rf-ssl\gui\camerasettings.cpp \
 		..\rf-ssl\plugins\plugin_camerasettings.cpp \
-		..\rf-ssl\gui\camerasettingswidget.cpp ..\build\rf-ssl\resources\qrc_icons_gui.cpp \
+		..\rf-ssl\gui\camerasettingswidget.cpp \
+		..\rf-ssl\plugins\camerasettingskeeper.cpp ..\build\rf-ssl\resources\qrc_icons_gui.cpp \
 		..\build\rf-ssl\resources\qrc_icons.cpp \
 		..\build\rf-ssl\moc\moc_capture_thread.cpp \
 		..\build\rf-ssl\moc\moc_videowidget.cpp \
@@ -259,6 +260,7 @@ OBJECTS       = ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj \
 		..\build\rf-ssl\objd\camerasettings.obj \
 		..\build\rf-ssl\objd\plugin_camerasettings.obj \
 		..\build\rf-ssl\objd\camerasettingswidget.obj \
+		..\build\rf-ssl\objd\camerasettingskeeper.obj \
 		..\build\rf-ssl\objd\qrc_icons_gui.obj \
 		..\build\rf-ssl\objd\qrc_icons.obj \
 		..\build\rf-ssl\objd\moc_capture_thread.obj \
@@ -413,7 +415,8 @@ DIST          =  ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\vartypes\xml\xmlParser.h \
 		..\rf-ssl\gui\camerasettings.h \
 		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_refbox_log.pb.cc \
 		..\rf-common\proto\cpp\messages_robocup_ssl_wrapper.pb.cc \
@@ -501,7 +504,8 @@ DIST          =  ..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\vartypes\xml\xmlParser.cpp \
 		..\rf-ssl\gui\camerasettings.cpp \
 		..\rf-ssl\plugins\plugin_camerasettings.cpp \
-		..\rf-ssl\gui\camerasettingswidget.cpp
+		..\rf-ssl\gui\camerasettingswidget.cpp \
+		..\rf-ssl\plugins\camerasettingskeeper.cpp
 QMAKE_TARGET  = rf-vision
 DESTDIR        = ..\rf_bind\ #avoid trailing-slash linebreak
 TARGET         = rf-vision.exe
@@ -923,8 +927,8 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) ..\build\rf-ssl\objd\messages_robocup_ssl_detection.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_geometry.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_refbox_log.pb.obj ..\build\rf-ssl\objd\messages_robocup_ssl_wrapper.pb.obj ..\build\rf-ssl\objd\main.obj ..\build\rf-ssl\objd\framedata.obj ..\build\rf-ssl\objd\capture_thread.obj ..\build\rf-ssl\objd\videowidget.obj ..\build\rf-ssl\objd\renderoptions.obj ..\build\rf-ssl\objd\realtimedisplaywidget.obj ..\build\rf-ssl\objd\mainwindow.obj ..\build\rf-ssl\objd\lutwidget.obj ..\build\rf-ssl\objd\jog_dial.obj ..\build\rf-ssl\objd\glwidget.obj ..\build\rf-ssl\objd\glLUTwidget.obj ..\build\rf-ssl\objd\colorpicker.obj ..\build\rf-ssl\objd\cameracalibwidget.obj ..\build\rf-ssl\objd\visionplugin.obj ..\build\rf-ssl\objd\plugin_visualize.obj ..\build\rf-ssl\objd\plugin_sslnetworkoutput.obj ..\build\rf-ssl\objd\plugin_runlength_encode.obj ..\build\rf-ssl\objd\plugin_publishgeometry.obj ..\build\rf-ssl\objd\plugin_find_blobs.obj ..\build\rf-ssl\objd\plugin_dvr.obj ..\build\rf-ssl\objd\plugin_detect_robots.obj ..\build\rf-ssl\objd\plugin_detect_balls.obj ..\build\rf-ssl\objd\plugin_colorthreshold.obj ..\build\rf-ssl\objd\plugin_colorcalib.obj ..\build\rf-ssl\objd\plugin_cameracalib.obj ..\build\rf-ssl\objd\visionstack.obj ..\build\rf-ssl\objd\stack_robocup_ssl.obj ..\build\rf-ssl\objd\multivisionstack.obj ..\build\rf-ssl\objd\multistack_robocup_ssl.obj ..\build\rf-ssl\objd\captureinterface.obj ..\build\rf-ssl\objd\capture_generator.obj ..\build\rf-ssl\objd\capturefromfile.obj ..\build\rf-ssl\objd\captureopencv.obj ..\build\rf-ssl\objd\cmpattern_teamdetector.obj ..\build\rf-ssl\objd\cmpattern_team.obj ..\build\rf-ssl\objd\cmpattern_pattern.obj ..\build\rf-ssl\objd\cmvision_threshold.obj ..\build\rf-ssl\objd\cmvision_region.obj ..\build\rf-ssl\objd\cmvision_histogram.obj ..\build\rf-ssl\objd\globject.obj ..\build\rf-ssl\objd\glcamera.obj ..\build\rf-ssl\objd\netraw.obj ..\build\rf-ssl\objd\robocup_ssl_server.obj ..\build\rf-ssl\objd\texture.obj
-	-$(DEL_FILE) ..\build\rf-ssl\objd\ringbuffer.obj ..\build\rf-ssl\objd\rawimage.obj ..\build\rf-ssl\objd\qgetopt.obj ..\build\rf-ssl\objd\lut3d.obj ..\build\rf-ssl\objd\image_io.obj ..\build\rf-ssl\objd\image.obj ..\build\rf-ssl\objd\framelimiter.obj ..\build\rf-ssl\objd\conversions.obj ..\build\rf-ssl\objd\camera_calibration.obj ..\build\rf-ssl\objd\VarXML.obj ..\build\rf-ssl\objd\VarTypesInstance.obj ..\build\rf-ssl\objd\VarTypesFactory.obj ..\build\rf-ssl\objd\VarTypes.obj ..\build\rf-ssl\objd\VarNotifier.obj ..\build\rf-ssl\objd\VarBase64.obj ..\build\rf-ssl\objd\VarTreeViewOptions.obj ..\build\rf-ssl\objd\VarTreeView.obj ..\build\rf-ssl\objd\VarTreeModel.obj ..\build\rf-ssl\objd\VarItemDelegate.obj ..\build\rf-ssl\objd\VarItem.obj ..\build\rf-ssl\objd\VarVal.obj ..\build\rf-ssl\objd\VarType.obj ..\build\rf-ssl\objd\VarTrigger.obj ..\build\rf-ssl\objd\VarStringVal.obj ..\build\rf-ssl\objd\VarStringEnum.obj ..\build\rf-ssl\objd\VarString.obj ..\build\rf-ssl\objd\VarSelection.obj ..\build\rf-ssl\objd\VarQWidget.obj ..\build\rf-ssl\objd\VarList.obj ..\build\rf-ssl\objd\VarIntVal.obj ..\build\rf-ssl\objd\VarInt.obj ..\build\rf-ssl\objd\VarExternal.obj ..\build\rf-ssl\objd\VarDoubleVal.obj ..\build\rf-ssl\objd\VarDouble.obj ..\build\rf-ssl\objd\VarBoolVal.obj ..\build\rf-ssl\objd\VarBool.obj ..\build\rf-ssl\objd\VarBlob.obj ..\build\rf-ssl\objd\xmlParser.obj ..\build\rf-ssl\objd\camerasettings.obj ..\build\rf-ssl\objd\plugin_camerasettings.obj ..\build\rf-ssl\objd\camerasettingswidget.obj ..\build\rf-ssl\objd\qrc_icons_gui.obj ..\build\rf-ssl\objd\qrc_icons.obj ..\build\rf-ssl\objd\moc_capture_thread.obj ..\build\rf-ssl\objd\moc_videowidget.obj ..\build\rf-ssl\objd\moc_mainwindow.obj ..\build\rf-ssl\objd\moc_lutwidget.obj ..\build\rf-ssl\objd\moc_jog_dial.obj ..\build\rf-ssl\objd\moc_glwidget.obj ..\build\rf-ssl\objd\moc_glLUTwidget.obj ..\build\rf-ssl\objd\moc_cameracalibwidget.obj ..\build\rf-ssl\objd\moc_visionplugin.obj ..\build\rf-ssl\objd\moc_plugin_publishgeometry.obj ..\build\rf-ssl\objd\moc_plugin_dvr.obj
-	-$(DEL_FILE) ..\build\rf-ssl\objd\moc_multistack_robocup_ssl.obj ..\build\rf-ssl\objd\moc_capture_generator.obj ..\build\rf-ssl\objd\moc_capturefromfile.obj ..\build\rf-ssl\objd\moc_cmpattern_teamdetector.obj ..\build\rf-ssl\objd\moc_cmpattern_team.obj ..\build\rf-ssl\objd\moc_lut3d.obj ..\build\rf-ssl\objd\moc_field.obj ..\build\rf-ssl\objd\moc_VarNotifier.obj ..\build\rf-ssl\objd\moc_VarTreeView.obj ..\build\rf-ssl\objd\moc_VarTreeModel.obj ..\build\rf-ssl\objd\moc_VarItemDelegate.obj ..\build\rf-ssl\objd\moc_VarItem.obj ..\build\rf-ssl\objd\moc_VarType.obj ..\build\rf-ssl\objd\moc_VarTrigger.obj ..\build\rf-ssl\objd\moc_VarStringEnum.obj ..\build\rf-ssl\objd\moc_VarString.obj ..\build\rf-ssl\objd\moc_VarSelection.obj ..\build\rf-ssl\objd\moc_VarQWidget.obj ..\build\rf-ssl\objd\moc_VarList.obj ..\build\rf-ssl\objd\moc_VarInt.obj ..\build\rf-ssl\objd\moc_VarExternal.obj ..\build\rf-ssl\objd\moc_VarDouble.obj ..\build\rf-ssl\objd\moc_VarBool.obj ..\build\rf-ssl\objd\moc_VarBlob.obj ..\build\rf-ssl\objd\moc_camerasettings.obj ..\build\rf-ssl\objd\moc_camerasettingswidget.obj debug\rf-vision_pch.obj
+	-$(DEL_FILE) ..\build\rf-ssl\objd\ringbuffer.obj ..\build\rf-ssl\objd\rawimage.obj ..\build\rf-ssl\objd\qgetopt.obj ..\build\rf-ssl\objd\lut3d.obj ..\build\rf-ssl\objd\image_io.obj ..\build\rf-ssl\objd\image.obj ..\build\rf-ssl\objd\framelimiter.obj ..\build\rf-ssl\objd\conversions.obj ..\build\rf-ssl\objd\camera_calibration.obj ..\build\rf-ssl\objd\VarXML.obj ..\build\rf-ssl\objd\VarTypesInstance.obj ..\build\rf-ssl\objd\VarTypesFactory.obj ..\build\rf-ssl\objd\VarTypes.obj ..\build\rf-ssl\objd\VarNotifier.obj ..\build\rf-ssl\objd\VarBase64.obj ..\build\rf-ssl\objd\VarTreeViewOptions.obj ..\build\rf-ssl\objd\VarTreeView.obj ..\build\rf-ssl\objd\VarTreeModel.obj ..\build\rf-ssl\objd\VarItemDelegate.obj ..\build\rf-ssl\objd\VarItem.obj ..\build\rf-ssl\objd\VarVal.obj ..\build\rf-ssl\objd\VarType.obj ..\build\rf-ssl\objd\VarTrigger.obj ..\build\rf-ssl\objd\VarStringVal.obj ..\build\rf-ssl\objd\VarStringEnum.obj ..\build\rf-ssl\objd\VarString.obj ..\build\rf-ssl\objd\VarSelection.obj ..\build\rf-ssl\objd\VarQWidget.obj ..\build\rf-ssl\objd\VarList.obj ..\build\rf-ssl\objd\VarIntVal.obj ..\build\rf-ssl\objd\VarInt.obj ..\build\rf-ssl\objd\VarExternal.obj ..\build\rf-ssl\objd\VarDoubleVal.obj ..\build\rf-ssl\objd\VarDouble.obj ..\build\rf-ssl\objd\VarBoolVal.obj ..\build\rf-ssl\objd\VarBool.obj ..\build\rf-ssl\objd\VarBlob.obj ..\build\rf-ssl\objd\xmlParser.obj ..\build\rf-ssl\objd\camerasettings.obj ..\build\rf-ssl\objd\plugin_camerasettings.obj ..\build\rf-ssl\objd\camerasettingswidget.obj ..\build\rf-ssl\objd\camerasettingskeeper.obj ..\build\rf-ssl\objd\qrc_icons_gui.obj ..\build\rf-ssl\objd\qrc_icons.obj ..\build\rf-ssl\objd\moc_capture_thread.obj ..\build\rf-ssl\objd\moc_videowidget.obj ..\build\rf-ssl\objd\moc_mainwindow.obj ..\build\rf-ssl\objd\moc_lutwidget.obj ..\build\rf-ssl\objd\moc_jog_dial.obj ..\build\rf-ssl\objd\moc_glwidget.obj ..\build\rf-ssl\objd\moc_glLUTwidget.obj ..\build\rf-ssl\objd\moc_cameracalibwidget.obj ..\build\rf-ssl\objd\moc_visionplugin.obj
+	-$(DEL_FILE) ..\build\rf-ssl\objd\moc_plugin_publishgeometry.obj ..\build\rf-ssl\objd\moc_plugin_dvr.obj ..\build\rf-ssl\objd\moc_multistack_robocup_ssl.obj ..\build\rf-ssl\objd\moc_capture_generator.obj ..\build\rf-ssl\objd\moc_capturefromfile.obj ..\build\rf-ssl\objd\moc_cmpattern_teamdetector.obj ..\build\rf-ssl\objd\moc_cmpattern_team.obj ..\build\rf-ssl\objd\moc_lut3d.obj ..\build\rf-ssl\objd\moc_field.obj ..\build\rf-ssl\objd\moc_VarNotifier.obj ..\build\rf-ssl\objd\moc_VarTreeView.obj ..\build\rf-ssl\objd\moc_VarTreeModel.obj ..\build\rf-ssl\objd\moc_VarItemDelegate.obj ..\build\rf-ssl\objd\moc_VarItem.obj ..\build\rf-ssl\objd\moc_VarType.obj ..\build\rf-ssl\objd\moc_VarTrigger.obj ..\build\rf-ssl\objd\moc_VarStringEnum.obj ..\build\rf-ssl\objd\moc_VarString.obj ..\build\rf-ssl\objd\moc_VarSelection.obj ..\build\rf-ssl\objd\moc_VarQWidget.obj ..\build\rf-ssl\objd\moc_VarList.obj ..\build\rf-ssl\objd\moc_VarInt.obj ..\build\rf-ssl\objd\moc_VarExternal.obj ..\build\rf-ssl\objd\moc_VarDouble.obj ..\build\rf-ssl\objd\moc_VarBool.obj ..\build\rf-ssl\objd\moc_VarBlob.obj ..\build\rf-ssl\objd\moc_camerasettings.obj ..\build\rf-ssl\objd\moc_camerasettingswidget.obj debug\rf-vision_pch.obj
 	-$(DEL_FILE) debug\rf-vision_pch.pch ..\rf_bind\rf-vision.exp ..\rf_bind\rf-vision.ilk ..\rf_bind\rf-vision.idb ..\rf_bind\rf-vision.exe.embed.manifest ..\rf_bind\rf-vision.exe_manifest.rc ..\rf_bind\rf-vision.exe_manifest.res
 
 distclean: clean 
@@ -1271,6 +1275,7 @@ compiler_moc_header_clean:
 		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QThread \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qthread.h \
 		..\rf-common\util\ringbuffer.h \
@@ -1395,6 +1400,46 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsplitter.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
 		..\build\rf-ssl\ui\ui_videowidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qicon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QApplication \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qeventloop.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QFrame \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvalidator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\rf-ssl\videostats.h \
 		..\rf-ssl\capturestats.h \
 		..\rf-common\util\ringbuffer.h \
@@ -1716,9 +1761,40 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsizepolicy.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
 		..\build\rf-ssl\ui\ui_mainwindow.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QApplication \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSplitter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsplitter.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
 		..\rf-ssl\capture_thread.h \
 		..\rf-common\capture\capturefromfile.h \
 		..\rf-common\capture\captureinterface.h \
@@ -1731,13 +1807,6 @@ compiler_moc_header_clean:
 		..\rf-common\vartypes\primitives\VarType.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
@@ -1764,21 +1833,13 @@ compiler_moc_header_clean:
 		..\rf-common\vartypes\primitives\VarStringEnum.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
 		..\rf-common\vartypes\primitives\VarSelection.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
 		..\rf-common\vartypes\primitives\VarExternal.h \
 		..\rf-common\vartypes\primitives\VarQWidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
 		..\rf-common\vartypes\primitives\VarTrigger.h \
@@ -1827,6 +1888,7 @@ compiler_moc_header_clean:
 		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QThread \
 		..\rf-common\util\ringbuffer.h \
 		..\rf-ssl\framedata.h \
@@ -1844,15 +1906,15 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtoolbar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QCloseEvent \
 		..\build\rf-ssl\ui\ui_videowidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QFrame \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
 		..\rf-ssl\gui\glwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\QGLWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qgl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qglcolormap.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qtopenglglobal.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QWheelEvent \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMessageBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdialog.h \
@@ -1860,9 +1922,6 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qfiledialog.h \
 		..\rf-common\util\zoom.h \
 		..\rf-ssl\gui\colorpicker.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidgetAction \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidgetaction.h \
 		..\rf-ssl\plugins\plugin_visualize.h \
@@ -1969,7 +2028,6 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\complexwidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\itemviews.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblemenu.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QPointer \
@@ -2010,8 +2068,6 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtablewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtreewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtreewidgetitemiterator.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qformlayout.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLayout \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgesture.h \
@@ -2037,12 +2093,10 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QScrollerProperties \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qscrollerproperties.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMetaType \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsystemtrayicon.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundogroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundostack.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundoview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcalendarwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcommandlinkbutton.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdatetimeedit.h \
@@ -2056,8 +2110,6 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlcdnumber.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdiarea.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdisubwindow.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qplaintextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qprogressbar.h \
@@ -2090,7 +2142,6 @@ compiler_moc_header_clean:
 		..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\proto\cpp\messages_robocup_ssl_wrapper.pb.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QToolButton \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QGroupBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpacerItem \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QProgressDialog \
@@ -2116,9 +2167,6 @@ compiler_moc_header_clean:
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
-		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QString \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
@@ -4830,6 +4878,7 @@ compiler_moc_header_clean:
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtouchdevice.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QKeyEvent \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\rf-common\vartypes\VarTypes.h \
 		..\rf-common\vartypes\VarTypesInstance.h \
 		..\rf-common\vartypes\VarTypesFactory.h \
@@ -5439,9 +5488,6 @@ compiler_moc_header_clean:
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
-		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-ssl\stacks\multistack_robocup_ssl.h
 	C:\Feast\Qt\5.4\msvc2012_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Feast/Qt/5.4/msvc2012_opengl/mkspecs/win32-msvc2012 -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/inc -IC:/Feast/OpenCV/opencv/build/include -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/plugins -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/stacks -IC:/Feast/ProgrCpp/RF-Vision/rf-common/capture -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmpattern -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmvision -IC:/Feast/ProgrCpp/RF-Vision/rf-common/gl -IC:/Feast/ProgrCpp/RF-Vision/rf-common/net -IC:/Feast/ProgrCpp/RF-Vision/rf-common/proto/cpp -IC:/Feast/ProgrCpp/RF-Vision/rf-common/util -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/primitives -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/xml -IC:/Feast/Qt/5.4/msvc2012_opengl/include -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtOpenGL -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtWidgets -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtGui -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtCore -I. ..\rf-ssl\stacks\multistack_robocup_ssl.h -o ..\build\rf-ssl\moc\moc_multistack_robocup_ssl.cpp
 
@@ -9675,6 +9721,23 @@ compiler_moc_header_clean:
 		..\inc\google\protobuf\extension_set.h \
 		..\inc\google\protobuf\unknown_field_set.h \
 		..\rf-common\util\timer.h \
+		..\rf-common\capture\captureopencv.h \
+		..\..\..\OpenCV\opencv\build\include\opencv\highgui.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\types_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\version.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\operations.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\mat.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-common\capture\captureinterface.h \
+		..\rf-common\util\rawimage.h \
+		..\rf-common\util\image_interface.h \
+		..\rf-common\util\colors.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\rf-ssl\gui\camerasettingswidget.h
 	C:\Feast\Qt\5.4\msvc2012_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Feast/Qt/5.4/msvc2012_opengl/mkspecs/win32-msvc2012 -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/inc -IC:/Feast/OpenCV/opencv/build/include -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/plugins -IC:/Feast/ProgrCpp/RF-Vision/rf-ssl/stacks -IC:/Feast/ProgrCpp/RF-Vision/rf-common/capture -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmpattern -IC:/Feast/ProgrCpp/RF-Vision/rf-common/cmvision -IC:/Feast/ProgrCpp/RF-Vision/rf-common/gl -IC:/Feast/ProgrCpp/RF-Vision/rf-common/net -IC:/Feast/ProgrCpp/RF-Vision/rf-common/proto/cpp -IC:/Feast/ProgrCpp/RF-Vision/rf-common/util -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/gui -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/primitives -IC:/Feast/ProgrCpp/RF-Vision/rf-common/vartypes/xml -IC:/Feast/Qt/5.4/msvc2012_opengl/include -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtOpenGL -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtWidgets -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtGui -IC:/Feast/Qt/5.4/msvc2012_opengl/include/QtCore -I. ..\rf-ssl\gui\camerasettingswidget.h -o ..\build\rf-ssl\moc\moc_camerasettingswidget.cpp
 
@@ -10478,9 +10541,37 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmainwindow.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
 		..\build\rf-ssl\ui\ui_mainwindow.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSplitter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsplitter.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
 		..\rf-ssl\capture_thread.h \
 		..\rf-common\capture\capturefromfile.h \
 		..\rf-common\capture\captureinterface.h \
@@ -10493,13 +10584,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\vartypes\primitives\VarType.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
@@ -10526,21 +10610,13 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\vartypes\primitives\VarStringEnum.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
 		..\rf-common\vartypes\primitives\VarSelection.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
 		..\rf-common\vartypes\primitives\VarExternal.h \
 		..\rf-common\vartypes\primitives\VarQWidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
 		..\rf-common\vartypes\primitives\VarTrigger.h \
@@ -10589,6 +10665,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QThread \
 		..\rf-common\util\ringbuffer.h \
 		..\rf-ssl\framedata.h \
@@ -10606,15 +10683,15 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtoolbar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QCloseEvent \
 		..\build\rf-ssl\ui\ui_videowidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QFrame \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
 		..\rf-ssl\gui\glwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\QGLWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qgl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qglcolormap.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qtopenglglobal.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QWheelEvent \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMessageBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdialog.h \
@@ -10622,9 +10699,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qfiledialog.h \
 		..\rf-common\util\zoom.h \
 		..\rf-ssl\gui\colorpicker.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidgetAction \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidgetaction.h \
 		..\rf-ssl\plugins\plugin_visualize.h \
@@ -10731,7 +10805,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\complexwidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\itemviews.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblemenu.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QPointer \
@@ -10797,12 +10870,10 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QScrollerProperties \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qscrollerproperties.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMetaType \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsystemtrayicon.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundogroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundostack.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundoview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcalendarwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcommandlinkbutton.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdatetimeedit.h \
@@ -10816,8 +10887,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlcdnumber.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdiarea.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdisubwindow.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qplaintextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qprogressbar.h \
@@ -10850,7 +10919,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\proto\cpp\messages_robocup_ssl_wrapper.pb.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QToolButton \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QGroupBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpacerItem \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QProgressDialog \
@@ -10876,9 +10944,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
-		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMap \
@@ -11148,6 +11213,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QThread \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qthread.h \
 		..\rf-common\util\ringbuffer.h \
@@ -11161,6 +11227,86 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-ssl\capturestats.h \
 		..\rf-ssl\gui\renderoptions.h \
 		..\rf-common\util\pixelloc.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSlider \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\rf-common\util\camera_calibration.h \
+		..\rf-common\util\quaternion.h \
+		..\rf-common\util\gvector.h \
+		..\inc\Eigen\Core \
+		..\inc\Eigen\src\Core\util\DisableMSVCWarnings.h \
+		..\inc\Eigen\src\Core\util\Macros.h \
+		..\inc\Eigen\src\Core\util\Constants.h \
+		..\inc\Eigen\src\Core\util\ForwardDeclarations.h \
+		..\inc\Eigen\src\Core\util\Meta.h \
+		..\inc\Eigen\src\Core\util\XprHelper.h \
+		..\inc\Eigen\src\Core\util\StaticAssert.h \
+		..\inc\Eigen\src\Core\util\Memory.h \
+		..\inc\Eigen\src\Core\NumTraits.h \
+		..\inc\Eigen\src\Core\MathFunctions.h \
+		..\inc\Eigen\src\Core\GenericPacketMath.h \
+		..\inc\Eigen\src\Core\arch\SSE\PacketMath.h \
+		..\inc\Eigen\src\Core\arch\AltiVec\PacketMath.h \
+		..\inc\Eigen\src\Core\Functors.h \
+		..\inc\Eigen\src\Core\MatrixBase.h \
+		..\inc\Eigen\src\Core\Coeffs.h \
+		..\inc\Eigen\src\Core\Assign.h \
+		..\inc\Eigen\src\Core\MatrixStorage.h \
+		..\inc\Eigen\src\Core\NestByValue.h \
+		..\inc\Eigen\src\Core\Flagged.h \
+		..\inc\Eigen\src\Core\Matrix.h \
+		..\inc\Eigen\src\Core\Cwise.h \
+		..\inc\Eigen\src\Core\CwiseBinaryOp.h \
+		..\inc\Eigen\src\Core\CwiseUnaryOp.h \
+		..\inc\Eigen\src\Core\CwiseNullaryOp.h \
+		..\inc\Eigen\src\Core\Dot.h \
+		..\inc\Eigen\src\Core\Product.h \
+		..\inc\Eigen\src\Core\DiagonalProduct.h \
+		..\inc\Eigen\src\Core\SolveTriangular.h \
+		..\inc\Eigen\src\Core\MapBase.h \
+		..\inc\Eigen\src\Core\Map.h \
+		..\inc\Eigen\src\Core\Block.h \
+		..\inc\Eigen\src\Core\Minor.h \
+		..\inc\Eigen\src\Core\Transpose.h \
+		..\inc\Eigen\src\Core\DiagonalMatrix.h \
+		..\inc\Eigen\src\Core\DiagonalCoeffs.h \
+		..\inc\Eigen\src\Core\Sum.h \
+		..\inc\Eigen\src\Core\Redux.h \
+		..\inc\Eigen\src\Core\Visitor.h \
+		..\inc\Eigen\src\Core\Fuzzy.h \
+		..\inc\Eigen\src\Core\IO.h \
+		..\inc\Eigen\src\Core\Swap.h \
+		..\inc\Eigen\src\Core\CommaInitializer.h \
+		..\inc\Eigen\src\Core\Part.h \
+		..\inc\Eigen\src\Core\CacheFriendlyProduct.h \
+		..\inc\Eigen\src\Core\util\EnableMSVCWarnings.h \
+		..\rf-common\util\field.h \
+		..\rf-common\util\field_default_constants.h \
+		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.h \
+		..\inc\google\protobuf\generated_message_util.h \
+		..\inc\google\protobuf\stubs\once.h \
+		..\inc\google\protobuf\stubs\atomicops.h \
+		..\inc\google\protobuf\stubs\platform_macros.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_tsan.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_msvc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_solaris.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_macosx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm64_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_qnx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_mips_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_pnacl.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_generic_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_atomicword_compat.h \
+		..\inc\google\protobuf\repeated_field.h \
+		..\inc\google\protobuf\stubs\type_traits.h \
+		..\inc\google\protobuf\stubs\template_util.h \
+		..\inc\google\protobuf\extension_set.h \
+		..\inc\google\protobuf\unknown_field_set.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\videowidget.obj: ..\rf-ssl\gui\videowidget.cpp ..\rf-ssl\gui\videowidget.h \
@@ -11272,6 +11418,46 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsplitter.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
 		..\build\rf-ssl\ui\ui_videowidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qicon.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QApplication \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qeventloop.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QFrame \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qvalidator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\rf-ssl\videostats.h \
 		..\rf-ssl\capturestats.h \
 		..\rf-common\util\ringbuffer.h \
@@ -11636,9 +11822,40 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsizepolicy.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabwidget.h \
 		..\build\rf-ssl\ui\ui_mainwindow.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QApplication \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSplitter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsplitter.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qframe.h \
 		..\rf-ssl\capture_thread.h \
 		..\rf-common\capture\capturefromfile.h \
 		..\rf-common\capture\captureinterface.h \
@@ -11651,13 +11868,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\vartypes\primitives\VarType.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QPainter \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QStyleOptionViewItem \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyleoption.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractspinbox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractslider.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qstyle.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtabbar.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qrubberband.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QModelIndex \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLineEdit \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlineedit.h \
@@ -11684,21 +11894,13 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\vartypes\primitives\VarStringEnum.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QComboBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcombobox.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemdelegate.h \
 		..\rf-common\vartypes\primitives\VarSelection.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QListWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlistview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractitemview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qabstractscrollarea.h \
 		..\rf-common\vartypes\primitives\VarExternal.h \
 		..\rf-common\vartypes\primitives\VarQWidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QVBoxLayout \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qboxlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayout.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlayoutitem.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgridlayout.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QPushButton \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qpushbutton.h \
 		..\rf-common\vartypes\primitives\VarTrigger.h \
@@ -11747,6 +11949,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QThread \
 		..\rf-common\util\ringbuffer.h \
 		..\rf-ssl\framedata.h \
@@ -11764,15 +11967,15 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtoolbar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QCloseEvent \
 		..\build\rf-ssl\ui\ui_videowidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QFrame \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
 		..\rf-ssl\gui\glwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\QGLWidget \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qgl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qglcolormap.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtOpenGL\qtopenglglobal.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QWheelEvent \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QAction \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaction.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qactiongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QMessageBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdialog.h \
@@ -11780,9 +11983,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qfiledialog.h \
 		..\rf-common\util\zoom.h \
 		..\rf-ssl\gui\colorpicker.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QHBoxLayout \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidgetAction \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidgetaction.h \
 		..\rf-ssl\plugins\plugin_visualize.h \
@@ -11889,7 +12089,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\complexwidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\itemviews.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qheaderview.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblemenu.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qaccessiblewidgets.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QPointer \
@@ -11930,8 +12129,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtablewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtreewidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtreewidgetitemiterator.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qapplication.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdesktopwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qformlayout.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLayout \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qgesture.h \
@@ -11957,12 +12154,10 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QScrollerProperties \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qscrollerproperties.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMetaType \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QVariant \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qsystemtrayicon.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundogroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundostack.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qundoview.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qbuttongroup.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcalendarwidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qcommandlinkbutton.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qdatetimeedit.h \
@@ -11976,8 +12171,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlcdnumber.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdiarea.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmdisubwindow.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenu.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qmenubar.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qplaintextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qtextedit.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qprogressbar.h \
@@ -12010,7 +12203,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\proto\cpp\messages_robocup_ssl_detection.pb.h \
 		..\rf-common\proto\cpp\messages_robocup_ssl_wrapper.pb.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QToolButton \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QButtonGroup \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QGroupBox \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSpacerItem \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QProgressDialog \
@@ -12036,9 +12228,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
-		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		..\rf-common\util\qgetopt.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QString \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QLinkedList \
@@ -18406,6 +18595,20 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
+		..\rf-common\capture\captureopencv.h \
+		..\..\..\OpenCV\opencv\build\include\opencv\highgui.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\types_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\version.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\operations.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\mat.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-common\capture\captureinterface.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\rf-ssl\plugins\plugin_camerasettings.h \
 		..\rf-ssl\gui\camerasettingswidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
@@ -18496,6 +18699,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QKeyEvent \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QObject \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\rf-common\vartypes\VarTypes.h \
 		..\rf-common\vartypes\VarTypesInstance.h \
 		..\rf-common\vartypes\VarTypesFactory.h \
@@ -18738,6 +18942,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qtouchdevice.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QKeyEvent \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QMutex \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\rf-common\vartypes\VarTypes.h \
 		..\rf-common\vartypes\VarTypesInstance.h \
 		..\rf-common\vartypes\VarTypesFactory.h \
@@ -19347,9 +19552,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\cmpattern\cmpattern_pattern.h \
 		..\rf-ssl\plugins\plugin_sslnetworkoutput.h \
 		..\rf-ssl\plugins\plugin_publishgeometry.h \
-		..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\captureinterface.obj: ..\rf-common\capture\captureinterface.cpp ..\rf-common\capture\captureinterface.h \
@@ -20157,6 +20359,7 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QList \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QListIterator \
 		..\rf-common\vartypes\enhanced\TimeVar.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		..\..\..\OpenCV\opencv\build\include\opencv\cv.h \
 		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc_c.h \
 		..\..\..\OpenCV\opencv\build\include\opencv2\video\tracking.hpp \
@@ -20267,6 +20470,49 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\inc\dc1394\register.h \
 		..\inc\dc1394\utils.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QDebug \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QSlider \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qlabel.h \
+		..\rf-ssl\framedata.h \
+		..\rf-common\util\ringbuffer.h \
+		..\rf-ssl\plugins\visionplugin.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QMouseEvent \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\QKeyEvent \
+		..\rf-ssl\gui\realtimedisplaywidget.h \
+		..\rf-ssl\videostats.h \
+		..\rf-ssl\capturestats.h \
+		..\rf-ssl\gui\renderoptions.h \
+		..\rf-common\util\pixelloc.h \
+		..\rf-common\util\camera_calibration.h \
+		..\rf-common\util\quaternion.h \
+		..\rf-common\util\gvector.h \
+		..\rf-common\util\field.h \
+		..\rf-common\util\field_default_constants.h \
+		..\rf-common\proto\cpp\messages_robocup_ssl_geometry.pb.h \
+		..\inc\google\protobuf\generated_message_util.h \
+		..\inc\google\protobuf\stubs\once.h \
+		..\inc\google\protobuf\stubs\atomicops.h \
+		..\inc\google\protobuf\stubs\platform_macros.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_tsan.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_msvc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_solaris.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_macosx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_x86_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm64_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_arm_qnx.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_mips_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_pnacl.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_generic_gcc.h \
+		..\inc\google\protobuf\stubs\atomicops_internals_atomicword_compat.h \
+		..\inc\google\protobuf\repeated_field.h \
+		..\inc\google\protobuf\stubs\type_traits.h \
+		..\inc\google\protobuf\stubs\template_util.h \
+		..\inc\google\protobuf\extension_set.h \
+		..\inc\google\protobuf\unknown_field_set.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\cmpattern_teamdetector.obj: ..\rf-common\cmpattern\cmpattern_teamdetector.cpp ..\rf-common\cmpattern\cmpattern_teamdetector.h \
@@ -26840,10 +27086,9 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QDebug \
 		debug\rf-vision_pch.obj
 
-..\build\rf-ssl\objd\plugin_camerasettings.obj: ..\rf-ssl\plugins\plugin_camerasettings.cpp ..\rf-ssl\plugins\plugin_camerasettings.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+..\build\rf-ssl\objd\plugin_camerasettings.obj: ..\rf-ssl\plugins\plugin_camerasettings.cpp ..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QDebug \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobal.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qconfig.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfeatures.h \
@@ -26872,21 +27117,24 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobalstatic.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmutex.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnumeric.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qchar.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrefcount.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qarraydata.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearraylist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreevent.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qscopedpointer.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmetatype.h \
@@ -26894,22 +27142,30 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontainerfwd.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qisenum.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
+		..\rf-ssl\plugins\plugin_camerasettings.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmargins.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpaintdevice.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrect.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsize.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpalette.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcolor.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qrgb.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qbrush.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qmatrix.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpolygon.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qregion.h \
@@ -26920,8 +27176,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixelformat.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixmap.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer_impl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfont.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontmetrics.h \
@@ -26930,13 +27184,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcursor.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qkeysequence.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qevent.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurlquery.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfile.h \
@@ -27117,12 +27364,25 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\rf-common\util\timer.h \
 		..\rf-ssl\gui\camerasettingswidget.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QBoxLayout \
+		..\rf-common\capture\captureopencv.h \
+		..\..\..\OpenCV\opencv\build\include\opencv\highgui.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\types_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\version.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\operations.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\mat.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-common\capture\captureinterface.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
 		debug\rf-vision_pch.obj
 
-..\build\rf-ssl\objd\camerasettingswidget.obj: ..\rf-ssl\gui\camerasettingswidget.cpp ..\rf-ssl\gui\camerasettingswidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+..\build\rf-ssl\objd\camerasettingswidget.obj: ..\rf-ssl\gui\camerasettingswidget.cpp ..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\QDebug \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobal.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qconfig.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfeatures.h \
@@ -27151,21 +27411,24 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qglobalstatic.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmutex.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnumeric.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qchar.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrefcount.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qarraydata.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlist.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qalgorithms.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiterator.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearraylist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qnamespace.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstring.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringbuilder.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobjectdefs_impl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcoreevent.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qscopedpointer.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmetatype.h \
@@ -27173,22 +27436,30 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontainerfwd.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qisenum.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
+		..\rf-ssl\gui\camerasettingswidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qwindowdefs_win.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmargins.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpaintdevice.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qrect.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsize.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpoint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpalette.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcolor.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qrgb.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringlist.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdatastream.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qiodevice.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qpair.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qregexp.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qstringmatcher.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qbrush.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvector.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qmatrix.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpolygon.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qregion.h \
@@ -27199,8 +27470,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixelformat.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qpixmap.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qshareddata.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qhash.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qsharedpointer_impl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfont.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qfontmetrics.h \
@@ -27209,13 +27478,6 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qcursor.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qkeysequence.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtGui\qevent.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qvariant.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qmap.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qdebug.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qtextstream.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qlocale.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qset.h \
-		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qcontiguouscache.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurl.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qurlquery.h \
 		..\..\..\Qt\5.4\msvc2012_opengl\include\QtCore\qfile.h \
@@ -27382,6 +27644,26 @@ debug\rf-vision_pch.obj: ..\rf-ssl\stable.h ..\inc\stdint.h \
 		..\inc\google\protobuf\extension_set.h \
 		..\inc\google\protobuf\unknown_field_set.h \
 		..\rf-common\util\timer.h \
+		..\rf-common\capture\captureopencv.h \
+		..\..\..\OpenCV\opencv\build\include\opencv\highgui.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\types_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\core.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\version.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\operations.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\core\mat.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui_c.h \
+		..\..\..\OpenCV\opencv\build\include\opencv2\highgui\highgui.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\imgproc.hpp \
+		..\..\..\OpenCV\opencv\build\include\opencv2\imgproc\types_c.h \
+		..\rf-common\capture\captureinterface.h \
+		..\rf-common\util\rawimage.h \
+		..\rf-common\util\image_interface.h \
+		..\rf-common\util\colors.h \
+		..\rf-ssl\plugins\camerasettingskeeper.h \
+		debug\rf-vision_pch.obj
+
+..\build\rf-ssl\objd\camerasettingskeeper.obj: ..\rf-ssl\plugins\camerasettingskeeper.cpp ..\rf-ssl\plugins\camerasettingskeeper.h \
 		debug\rf-vision_pch.obj
 
 ..\build\rf-ssl\objd\qrc_icons_gui.obj: ..\build\rf-ssl\resources\qrc_icons_gui.cpp debug\rf-vision_pch.obj
